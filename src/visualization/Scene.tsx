@@ -16,15 +16,16 @@ export function Scene() {
     }, [paused, speed, manualTick]);
 
     return (
-        <Canvas camera={{ position: [0, 10, 10], fov: 50 }}>
+        <Canvas camera={{ position: [50, 120, 120], fov: 45 }}>
             <color attach="background" args={['#111']} />
             <Stars />
             <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
+            <pointLight position={[50, 50, 50]} intensity={1.5} />
+            <directionalLight position={[10, 100, 10]} intensity={1} castShadow />
 
             <WorldMap />
 
-            <OrbitControls />
+            <OrbitControls target={[50, 0, 50]} />
         </Canvas>
     );
 }

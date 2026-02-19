@@ -7,6 +7,8 @@ interface GameStore {
     paused: boolean;
     speed: number;
     tickTrigger: number;
+    selectedEntityId: string | null;
+    setSelectedEntityId: (id: string | null) => void;
     togglePause: () => void;
     setSpeed: (speed: number) => void;
     manualTick: () => void;
@@ -39,6 +41,8 @@ export const useStore = create<GameStore>((set, get) => {
         paused: true,
         speed: 1,
         tickTrigger: 0,
+        selectedEntityId: null,
+        setSelectedEntityId: (id) => set({ selectedEntityId: id }),
         togglePause: () => set(state => ({ paused: !state.paused })),
         setSpeed: (speed) => set({ speed }),
         manualTick: () => {

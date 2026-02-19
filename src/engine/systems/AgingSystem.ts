@@ -9,13 +9,6 @@ export class AgingSystem {
         people.forEach(person => {
             if (!person.isAlive) return;
 
-            // Check if birthday (simplified: every 52 weeks we could increment, 
-            // but let's just use random update or assume person.age is updated elsewhere?
-            // Better: person stores `age` and we increment it.
-            // Actually, let's assume `age` is integer years.
-            // We can increment it if world.week == 1? 
-            // Or just check mortality weekly.
-
             this.handleMortality(person, world);
             this.handleReproduction(person, world);
         });
@@ -40,8 +33,6 @@ export class AgingSystem {
         if (person.needs.food === 0) deathChance += 0.2;
 
         // Wealth/Resources mitigation
-        // "survivalChance = hospitalLevel + doctorSkill + wealth"
-        // Simplified: wealth reduces death chance
         if (person.stats.wealth > 50) deathChance *= 0.8;
         if (person.stats.wealth > 100) deathChance *= 0.5;
 
@@ -59,59 +50,124 @@ export class AgingSystem {
             date: { ...world.state.time },
             involvedIds: [person.id]
         });
-
-        // TODO: Trigger inheritance / succession logic here or in another system?
-        // User said: "If king dies -> graph searches strongest influence -> successor"
-        // That sounds like InstitutionSystem job.
     }
 
     handleReproduction(person: Person, world: World) {
-        // Only females give birth in this sim for simplicity of trigger, 
-        // or couples.
-        if (person.gender !== 'female') return;
-        if (person.age < 18 || person.age > 45) return;
+        if (person.age < 18 || person.age > 50) return;
 
-        // Check for partner
-        const relationships = world.socialGraph.getStrongestRelationships(person.id);
-        const partnerRel = relationships.find(r => r.type === 'family' || (r.type === 'trust' && r.value > 80));
+        // 1. Romance Logic (Courtship)
+        if (!person.partner) {
+            // Find a potential partner
+            // Heterosexual pairing for now
+            const potentialPartner = this.findRandomMate(person, world);
+            if (potentialPartner) {
+                // Chance to start dating
+                if (Math.random() < 0.1) {
+                    let rel = person.relationships[potentialPartner];
+                    if (!rel) {
+                        world.socialGraph.addRelationship(person.id, potentialPartner, 'friend', 10);
+                        world.socialGraph.addRelationship(potentialPartner, person.id, 'friend', 10);
+                    } else if (rel.value > 50 && rel.type !== 'partner') {
+                        // Propose!
+                        world.socialGraph.addRelationship(person.id, potentialPartner, 'partner', 100);
+                        world.socialGraph.addRelationship(potentialPartner, person.id, 'partner', 100);
 
-        // If no partner, low chance? Or requires partner?
-        // "if couple + stable + food -> birth chance"
-        if (!partnerRel) return;
+                        person.partner = potentialPartner;
+                        world.state.people[potentialPartner].partner = person.id;
 
-        // Stability & Food
-        if (person.needs.food < 50) return;
-        if (person.needs.safety < 50) return;
+                        world.logEvent({
+                            id: uuidv4(),
+                            type: 'socialize',
+                            description: `${person.name} and ${world.state.people[potentialPartner].name} started dating.`,
+                            date: { ...world.state.time },
+                            involvedIds: [person.id, potentialPartner]
+                        });
+                    } else {
+                        // Build relationship
+                        rel.value += 5;
+                        world.state.people[potentialPartner].relationships[person.id].value += 5;
+                    }
+                }
+            }
+        }
 
-        // Birth chance
-        // Realistically human gestation is 9 months. 
-        // Simplified: 0.005 chance per week?
+        // 2. Pregnancy Logic (Married/Partnered)
+        if (person.gender === 'female' && person.partner) {
+            const partnerId = person.partner;
+            // Removed unused partner retrieval
 
-        if (Math.random() < 0.005) {
-            this.createChild(person, partnerRel.targetId, world);
+            // Check stability & happiness
+            if (person.needs.food > 50 && person.stats.happiness > 50) {
+                // 2% chance per tick if partnered
+                if (Math.random() < 0.02) {
+                    this.createChild(person, partnerId, world);
+                }
+            }
         }
     }
 
+    findRandomMate(person: Person, world: World): ID | undefined {
+        const candidates = world.socialGraph.getAllPeople().filter(p =>
+            p.id !== person.id &&
+            p.gender !== person.gender && // Hetero logic for simplicity
+            p.age >= 18 &&
+            !p.partner && // Single
+            Math.abs(p.x - person.x) < 10 && // Close by
+            Math.abs(p.y - person.y) < 10
+        );
+        if (candidates.length > 0) {
+            return candidates[Math.floor(Math.random() * candidates.length)].id;
+        }
+        return undefined;
+    }
+
     createChild(mother: Person, fatherId: ID, world: World) {
+        const father = world.state.people[fatherId];
         const childId = uuidv4();
+
+        // Naming: [RandomFirst] [Fatherlastname]
+        const firstNames = ['Aria', 'Bael', 'Cian', 'Dara', 'Elian', 'Fae', 'Gael', 'Hana', 'Ian', 'Jael', 'Kael', 'Lia', 'Mara', 'Nial', 'Oryn', 'Pia', 'Quin', 'Ria', 'Sian', 'Tor', 'Una', 'Vim', 'Wyn', 'Xan', 'Yara', 'Zane', 'Ash', 'Birch', 'Cedar', 'Dawn', 'Sky', 'River'];
+        const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+
+        let lastName = 'Doe';
+        if (father) {
+            const parts = father.name.split(' ');
+            if (parts.length > 1) lastName = parts[parts.length - 1];
+        } else {
+            const parts = mother.name.split(' ');
+            if (parts.length > 1) lastName = parts[parts.length - 1];
+        }
+
+        const childName = `${firstName} ${lastName}`;
+
         const child: Person = {
             id: childId,
-            name: `Child of ${mother.name}`, // Generator needed
+            name: childName,
             age: 0,
+            yearBorn: world.state.time.year,
             isAlive: true,
             gender: Math.random() > 0.5 ? 'male' : 'female',
-            locationId: mother.locationId,
+            x: mother.x,
+            y: mother.y,
+            state: 'idle',
             stats: {
                 wealth: 0,
                 influence: 0,
-                reputation: 0
+                reputation: 0,
+                happiness: 100,
+                crimePropensity: 0,
+                fertility: 0
             },
             relationships: {},
             needs: {
                 food: 100,
                 safety: 100,
-                status: 0
-            }
+                social: 100,
+                rest: 100
+            },
+            parents: [mother.id, fatherId],
+            children: [],
+            visuals: this.mixGenetics(mother, father)
         };
 
         world.socialGraph.addPerson(child);
@@ -122,12 +178,33 @@ export class AgingSystem {
         world.socialGraph.addRelationship(childId, fatherId, 'family', 100);
         world.socialGraph.addRelationship(fatherId, childId, 'family', 100);
 
+        // Add to parents' children list
+        mother.children.push(childId);
+        if (father) father.children.push(childId);
+
         world.logEvent({
             id: uuidv4(),
             type: 'birth',
-            description: `${child.name} was born to ${mother.name}.`,
+            description: `${childName} was born to ${mother.name} and ${father.name}.`,
             date: { ...world.state.time },
             involvedIds: [childId, mother.id, fatherId]
         });
+    }
+    mixGenetics(mother: Person, father: Person): Person['visuals'] {
+        const skinColor = Math.random() > 0.5 ? mother.visuals.skinColor : (father?.visuals.skinColor || mother.visuals.skinColor);
+        const hairColor = Math.random() > 0.5 ? mother.visuals.hairColor : (father?.visuals.hairColor || mother.visuals.hairColor);
+
+        const fatherHeight = father?.visuals.height || mother.visuals.height;
+        let height = (mother.visuals.height + fatherHeight) / 2;
+        height += (Math.random() * 0.1) - 0.05;
+
+        height = Math.max(0.8, Math.min(1.4, height));
+
+        return {
+            skinColor,
+            hairColor,
+            height,
+            bodyType: Math.random() > 0.5 ? mother.visuals.bodyType : (father?.visuals.bodyType || 'average')
+        };
     }
 }

@@ -1,90 +1,123 @@
 import { World } from './World.js';
 import { v4 as uuidv4 } from 'uuid';
+import type { Person } from './types.js';
 
 export function seedWorld(world: World) {
-    console.log('Seeding world...');
+    console.log('Seeding world... (Grid System)');
 
-    // 1. Locations
-    const ashfallId = uuidv4();
-    const norvaleId = uuidv4();
-    const eldenPortId = uuidv4();
+    // 1. Setup Terrain
+    // Create a river
+    for (let y = 0; y < 100; y++) {
+        world.grid.setCellType(50, y, 'water');
+        world.grid.setCellType(51, y, 'water');
+    }
 
-    world.locationGraph.addLocation({
-        id: ashfallId,
-        name: 'Ashfall',
-        description: 'A volcanic region known for its smiths.',
-        connections: [],
-        coordinates: { x: -5, y: 0, z: 0 }
+    // 2. People & Villages
+    const VILLAGE_COUNT = 3;
+    const POPULATION_PER_VILLAGE = 20; // Total 60
+
+    const firstNames = ['Aria', 'Bael', 'Cian', 'Dara', 'Elian', 'Fae', 'Gael', 'Hana', 'Ian', 'Jael', 'Kael', 'Lia', 'Mara', 'Nial', 'Oryn', 'Pia', 'Quin', 'Ria', 'Sian', 'Tor', 'Una', 'Vim', 'Wyn', 'Xan', 'Yara', 'Zane', 'Ash', 'Birch', 'Cedar', 'Dawn', 'Elm', 'Fern', 'Glen', 'Hazel', 'Iris', 'Jade', 'Kale', 'Lily', 'Moss', 'Nova', 'Oak', 'Pine', 'Quill', 'Rose', 'Sage', 'Teal', 'Umber', 'Vine', 'Willow', 'Xylo', 'Yew', 'Zephyr'];
+
+    const surNames = ['Smith', 'Baker', 'Miller', 'Cooper', 'Fisher', 'Hunter', 'Carter', 'Wright', 'Turner', 'Mason', 'Hill', 'Wood', 'Stone', 'Rivers', 'Fields', 'Brook', 'Marsh', 'Dale', 'Vale', 'Glen', 'Storm', 'Rain', 'Frost', 'Snow', 'Swift', 'Strong', 'Wise', 'Wild', 'Green', 'Red', 'Blue', 'White', 'Black', 'Grey', 'Brown', 'Gold', 'Silver'];
+
+    // Define village centers
+    const villages = [
+        { x: 20, y: 20 },
+        { x: 80, y: 20 },
+        { x: 50, y: 80 }
+    ];
+
+    // Build roads for villages
+    villages.forEach(v => {
+        for (let i = -4; i <= 4; i++) {
+            world.grid.setCellType(v.x + i, v.y, 'road');
+            world.grid.setCellType(v.x, v.y + i, 'road');
+        }
     });
 
-    world.locationGraph.addLocation({
-        id: norvaleId,
-        name: 'Norvale',
-        description: 'A lush valley with fertile lands.',
-        connections: [],
-        coordinates: { x: 0, y: 0, z: 0 }
-    });
+    for (let v = 0; v < VILLAGE_COUNT; v++) {
+        const village = villages[v];
 
-    world.locationGraph.addLocation({
-        id: eldenPortId,
-        name: 'Elden Port',
-        description: 'A coastal trade hub.',
-        connections: [],
-        coordinates: { x: 5, y: 0, z: 0 }
-    });
+        for (let i = 0; i < POPULATION_PER_VILLAGE; i++) {
+            const id = uuidv4();
+            const gender = i % 2 === 0 ? 'male' : 'female';
+            const age = 18 + Math.floor(Math.random() * 25);
 
-    // Connect them
-    world.locationGraph.connect(ashfallId, norvaleId);
-    world.locationGraph.connect(norvaleId, eldenPortId);
+            // Position in village
+            const x = Math.max(0, Math.min(99, village.x - 8 + Math.floor(Math.random() * 16)));
+            const y = Math.max(0, Math.min(99, village.y - 8 + Math.floor(Math.random() * 16)));
 
-    // 2. People
-    const karoId = uuidv4();
-    const liraId = uuidv4();
-    const brenId = uuidv4();
+            // Name generation
+            const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+            const lastName = surNames[Math.floor(Math.random() * surNames.length)];
 
-    world.socialGraph.addPerson({
-        id: karoId,
-        name: 'Karo',
-        age: 30,
-        isAlive: true,
-        gender: 'male',
-        locationId: ashfallId,
-        stats: { wealth: 50, influence: 80, reputation: 20 },
-        relationships: {},
-        needs: { food: 100, safety: 80, status: 50 }
-    });
+            // Wealth Distribution: 10% Rich, 90% Poor
+            const isRich = Math.random() < 0.1;
+            const wealth = isRich ? 1000 + Math.floor(Math.random() * 2000) : Math.floor(Math.random() * 100);
 
-    world.socialGraph.addPerson({
-        id: liraId,
-        name: 'Lira',
-        age: 25,
-        isAlive: true,
-        gender: 'female',
-        locationId: norvaleId,
-        stats: { wealth: 100, influence: 40, reputation: 90 },
-        relationships: {},
-        needs: { food: 100, safety: 100, status: 60 }
-    });
+            const person: Person = {
+                id,
+                name: `${firstName} ${lastName}`,
+                age,
+                yearBorn: 1 - age,
+                isAlive: true,
+                gender: gender as 'male' | 'female',
+                x,
+                y,
+                state: 'idle',
+                stats: {
+                    wealth,
+                    influence: Math.floor(Math.random() * 10),
+                    reputation: 0,
+                    happiness: 70 + Math.floor(Math.random() * 30),
+                    crimePropensity: Math.floor(Math.random() * 10),
+                    fertility: gender === 'female' && age < 45 ? 80 : 0
+                },
+                relationships: {},
+                needs: {
+                    food: 80 + Math.floor(Math.random() * 20),
+                    safety: 100,
+                    social: 80,
+                    rest: 100
+                },
+                parents: [],
+                children: [],
+                visuals: {
+                    skinColor: ['#f5d0b0', '#e0ac69', '#8d5524', '#c68642', '#302621', '#ffcc99'][Math.floor(Math.random() * 6)],
+                    hairColor: ['#000000', '#4a4a4a', '#e8e8a0', '#a52a2a', '#0a0a0a'][Math.floor(Math.random() * 5)],
+                    height: 0.9 + Math.random() * 0.4,
+                    bodyType: Math.random() > 0.8 ? 'stocky' : (Math.random() > 0.2 ? 'average' : 'thin')
+                }
+                // job/residence added below/implicitly undefined
+            };
 
-    world.socialGraph.addPerson({
-        id: brenId,
-        name: 'Bren',
-        age: 40,
-        isAlive: true,
-        gender: 'male',
-        locationId: eldenPortId,
-        stats: { wealth: 20, influence: 10, reputation: 5 },
-        relationships: {},
-        needs: { food: 60, safety: 40, status: 30 }
-    });
+            // Rich people build a house immediately
+            if (isRich) {
+                const houseId = uuidv4();
+                world.state.buildings[houseId] = {
+                    id: houseId,
+                    type: 'house',
+                    x: Math.floor(person.x),
+                    y: Math.floor(person.y),
+                    ownerId: person.id,
+                    employees: [],
+                    level: 2 // Estate
+                };
 
-    // 3. Relationships
-    // Karo trusts Lira (+40)
-    world.socialGraph.addRelationship(karoId, liraId, 'trust', 40);
-    // Karo hates Bren (-80)
-    world.socialGraph.addRelationship(karoId, brenId, 'hate', -80);
-    // Bren fears Lira (-20)
-    world.socialGraph.addRelationship(brenId, liraId, 'fear', -20);
+                // Ensure they live there
+                person.residenceId = houseId;
 
-    console.log('World seeded.');
+                const cell = world.grid.getCell(Math.floor(person.x), Math.floor(person.y));
+                if (cell) {
+                    cell.buildingId = houseId;
+                    cell.ownerId = person.id;
+                    cell.type = 'grass'; // No houses on water/road
+                }
+            }
+
+            world.state.people[id] = person;
+        }
+    }
+
+    console.log(`Seeded ${VILLAGE_COUNT * POPULATION_PER_VILLAGE} agents in ${VILLAGE_COUNT} villages.`);
 }

@@ -48,7 +48,7 @@ export class DecisionSystem {
         // Default: Work / Socialize
         if (Math.random() < 0.3) {
             // Socialize with random person in same location
-            const neighbors = world.socialGraph.getAllPeople().filter(p => p.locationId === person.locationId && p.id !== person.id && p.isAlive);
+            const neighbors = world.socialGraph.getAllPeople().filter(p => p.x === person.x && p.y === person.y && p.id !== person.id && p.isAlive);
             if (neighbors.length > 0) {
                 const target = neighbors[Math.floor(Math.random() * neighbors.length)];
                 return this.performAction(person, 'socialize', target.id, world);
@@ -70,7 +70,7 @@ export class DecisionSystem {
 
             // Victim hates attacker
             const existingHate = target.relationships[actor.id]?.value || 0;
-            world.socialGraph.addRelationship(target.id, actor.id, 'hate', existingHate - 50);
+            world.socialGraph.addRelationship(target.id, actor.id, 'enemy', existingHate - 50);
 
             // Chance to kill
             if (Math.random() < 0.1) {
@@ -95,8 +95,8 @@ export class DecisionSystem {
             const actorToTarget = actor.relationships[target.id]?.value || 0;
             const targetToActor = target.relationships[actor.id]?.value || 0;
 
-            world.socialGraph.addRelationship(actor.id, target.id, 'trust', actorToTarget + 2);
-            world.socialGraph.addRelationship(target.id, actor.id, 'trust', targetToActor + 2);
+            world.socialGraph.addRelationship(actor.id, target.id, 'friend', actorToTarget + 2);
+            world.socialGraph.addRelationship(target.id, actor.id, 'friend', targetToActor + 2);
         }
     }
 

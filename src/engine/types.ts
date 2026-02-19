@@ -1,68 +1,133 @@
+// Basic Identifiers
 export type ID = string;
+
+// The Grid World
+export type CellType = 'grass' | 'road' | 'water' | 'wall';
+
+export interface GridCell {
+  x: number;
+  y: number;
+  type: CellType;
+  ownerId?: ID; // Person or Government/Institution
+  buildingId?: ID;
+}
+
+export interface Building {
+  id: ID;
+  type: 'house' | 'school' | 'hospital' | 'jail' | 'farm' | 'shop' | 'police_station';
+  x: number;
+  y: number;
+  ownerId?: ID;
+  employees: ID[];
+  level: number;
+}
+
+// Agents
+export type Gender = 'male' | 'female';
 
 export interface Person {
   id: ID;
   name: string;
-  age: number; // in years (approx) or weeks
+  age: number;
+  yearBorn: number; // For tracking exact age
   isAlive: boolean;
-  gender: 'male' | 'female';
-  locationId: ID;
+  gender: Gender;
+
+  // Position & Motion
+  x: number;
+  y: number;
+  targetX?: number;
+  targetY?: number;
+  state: 'idle' | 'moving' | 'working' | 'sleeping' | 'protesting' | 'imprisoned';
+
+  // Stats
   stats: {
     wealth: number;
-    influence: number;
-    reputation: number;
+    influence: number; // 0-100
+    reputation: number; // -100 to 100
+    happiness: number; // 0-100
+    crimePropensity: number; // 0-100
+    fertility: number; // 0-100
   };
-  relationships: Record<ID, Relationship>;
+
+  // Needs (0-100, 0 is critical)
   needs: {
     food: number;
     safety: number;
-    status: number;
+    social: number;
+    rest: number;
   };
+
+  // Relationships (Adjacency List simplified)
+  relationships: Record<ID, Relationship>;
+
+  // Family
+  parents: ID[];
+  children: ID[];
+  partner?: ID;
+
+  // Economy
+  job?: Job;
+  residenceId?: ID;
+
+  // Visuals & Genetics
+  visuals: VisualTraits;
+}
+
+export interface Job {
+  title: 'Farmer' | 'Guard' | 'Laborer' | 'Merchant' | 'Unemployed';
+  salary: number; // Daily
+  employerId?: ID; // Building or Govt
+  buildingId?: ID;
+}
+
+export interface VisualTraits {
+  skinColor: string; // Hex
+  hairColor: string; // Hex
+  height: number; // 0.8 - 1.2 multiplier
+  bodyType: 'thin' | 'average' | 'stocky';
 }
 
 export interface Relationship {
   targetId: ID;
-  type: 'trust' | 'hate' | 'fear' | 'family';
-  value: number; // -100 to 100, where 0 is neutral
+  type: 'friend' | 'enemy' | 'family' | 'partner';
+  value: number; // -100 to 100
 }
 
-export interface Location {
-  id: ID;
-  name: string;
-  description: string;
-  connections: ID[]; // Connected Location IDs
-  coordinates: { x: number; y: number; z: number };
+// World State
+export interface WorldState {
+  people: Record<ID, Person>;
+  grid: GridCell[][]; // 100x100 grid
+  buildings: Record<ID, Building>;
+  institutions: Record<ID, Institution>;
+  time: {
+    year: number;
+    week: number;
+    isNight: boolean;
+  };
+  weather: 'clear' | 'rain' | 'snow';
+  events: GameEvent[];
+
+  // Global Stats
+  lists: {
+    govtFunds: number;
+    taxRate: number;
+  };
 }
 
 export interface Institution {
   id: ID;
   name: string;
-  type: 'government' | 'religion' | 'military' | 'guild';
-  roles: Role[];
-}
-
-export interface Role {
-  id: ID;
-  name: string;
-  power: number; // Level of influence this role grants
-  holderId: ID | null;
-}
-
-export interface WorldState {
-  people: Record<ID, Person>;
-  locations: Record<ID, Location>;
-  institutions: Record<ID, Institution>;
-  time: {
-    year: number;
-    week: number;
-  };
-  events: GameEvent[];
+  type: 'government' | 'religion' | 'business';
+  leaderId?: ID;
+  members: ID[];
 }
 
 export interface GameEvent {
   id: ID;
-  type: string;
+  type: 'birth' | 'death' | 'attack' | 'socialize' | 'construction' | 'protest' | 'arrest';
   description: string;
-  date: { year: number; week: number };
+  date: { year: number, week: number };
   involvedIds: ID[];
+  location?: { x: number, y: number };
 }

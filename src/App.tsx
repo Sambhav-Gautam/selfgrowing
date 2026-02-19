@@ -1,5 +1,6 @@
 import { Scene } from './visualization/Scene';
 import { EventLog } from './ui/EventLog';
+import { HUD } from './ui/HUD';
 import { useStore } from './store';
 import './App.css';
 
@@ -46,6 +47,7 @@ function App() {
       </div>
 
       <EventLog />
+      <HUD />
     </div>
   );
 }
