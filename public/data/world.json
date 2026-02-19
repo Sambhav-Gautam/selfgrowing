@@ -1,0 +1,126 @@
+{
+  "people": {
+    "c964168b-a34d-4fe2-8377-e0af272edba9": {
+      "id": "c964168b-a34d-4fe2-8377-e0af272edba9",
+      "name": "Karo",
+      "age": 30,
+      "isAlive": true,
+      "gender": "male",
+      "locationId": "7ed00376-9308-4074-b3b9-25b3ae41f46f",
+      "stats": {
+        "wealth": 50,
+        "influence": 80,
+        "reputation": 20
+      },
+      "relationships": {
+        "8e10244c-45ca-4387-aa27-ca939b091084": {
+          "targetId": "8e10244c-45ca-4387-aa27-ca939b091084",
+          "type": "trust",
+          "value": 40
+        },
+        "c8c8a25a-5f3c-4227-b94d-71036822d024": {
+          "targetId": "c8c8a25a-5f3c-4227-b94d-71036822d024",
+          "type": "hate",
+          "value": -80
+        }
+      },
+      "needs": {
+        "food": 95,
+        "safety": 80,
+        "status": 50
+      }
+    },
+    "8e10244c-45ca-4387-aa27-ca939b091084": {
+      "id": "8e10244c-45ca-4387-aa27-ca939b091084",
+      "name": "Lira",
+      "age": 25,
+      "isAlive": true,
+      "gender": "female",
+      "locationId": "49ab85ff-564a-41c7-99ba-f7a7f3503aac",
+      "stats": {
+        "wealth": 100,
+        "influence": 40,
+        "reputation": 90
+      },
+      "relationships": {},
+      "needs": {
+        "food": 95,
+        "safety": 100,
+        "status": 60
+      }
+    },
+    "c8c8a25a-5f3c-4227-b94d-71036822d024": {
+      "id": "c8c8a25a-5f3c-4227-b94d-71036822d024",
+      "name": "Bren",
+      "age": 40,
+      "isAlive": true,
+      "gender": "male",
+      "locationId": "1843b298-6e5f-4fdd-8ae4-5ff5e5652ce0",
+      "stats": {
+        "wealth": 20,
+        "influence": 10,
+        "reputation": 5
+      },
+      "relationships": {
+        "8e10244c-45ca-4387-aa27-ca939b091084": {
+          "targetId": "8e10244c-45ca-4387-aa27-ca939b091084",
+          "type": "fear",
+          "value": -20
+        }
+      },
+      "needs": {
+        "food": 55,
+        "safety": 40,
+        "status": 30
+      }
+    }
+  },
+  "locations": {
+    "7ed00376-9308-4074-b3b9-25b3ae41f46f": {
+      "id": "7ed00376-9308-4074-b3b9-25b3ae41f46f",
+      "name": "Ashfall",
+      "description": "A volcanic region known for its smiths.",
+      "connections": [
+        "49ab85ff-564a-41c7-99ba-f7a7f3503aac"
+      ],
+      "coordinates": {
+        "x": -5,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "49ab85ff-564a-41c7-99ba-f7a7f3503aac": {
+      "id": "49ab85ff-564a-41c7-99ba-f7a7f3503aac",
+      "name": "Norvale",
+      "description": "A lush valley with fertile lands.",
+      "connections": [
+        "7ed00376-9308-4074-b3b9-25b3ae41f46f",
+        "1843b298-6e5f-4fdd-8ae4-5ff5e5652ce0"
+      ],
+      "coordinates": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "1843b298-6e5f-4fdd-8ae4-5ff5e5652ce0": {
+      "id": "1843b298-6e5f-4fdd-8ae4-5ff5e5652ce0",
+      "name": "Elden Port",
+      "description": "A coastal trade hub.",
+      "connections": [
+        "49ab85ff-564a-41c7-99ba-f7a7f3503aac"
+      ],
+      "coordinates": {
+        "x": 5,
+        "y": 0,
+        "z": 0
+      }
+    }
+  },
+  "institutions": {},
+  "time": {
+    "year": 1,
+    "week": 2
+  },
+  "events": []
+}
