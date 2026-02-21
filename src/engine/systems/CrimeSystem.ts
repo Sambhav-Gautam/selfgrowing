@@ -2,7 +2,8 @@ import { World } from '../World.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class CrimeSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewDay) return;
         const people = world.socialGraph.getAllPeople();
 
         people.forEach(criminal => {

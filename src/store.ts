@@ -38,7 +38,7 @@ export const useStore = create<GameStore>((set, get) => {
 
     return {
         world,
-        paused: true,
+        paused: false,
         speed: 1,
         tickTrigger: 0,
         selectedEntityId: null,

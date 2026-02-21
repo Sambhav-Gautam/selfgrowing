@@ -11,7 +11,7 @@ import { StatsSystem } from './systems/StatsSystem.js';
 import { CrimeSystem } from './systems/CrimeSystem.js';
 import { EventSystem } from './systems/EventSystem.js';
 import { WeatherSystem } from './systems/WeatherSystem.js';
-import type { WorldState, GameEvent } from './types.js';
+import type { WorldState, GameEvent, SystemContext } from './types.js';
 
 export class World {
     socialGraph: SocialGraph;
@@ -39,7 +39,7 @@ export class World {
                 grid: [], // Will be filled by WorldGrid
                 buildings: {},
                 institutions: {},
-                time: { year: 1, week: 1, isNight: false },
+                time: { year: 1, week: 1, day: 1, hour: 8, isNight: false },
                 weather: 'clear',
                 events: [],
                 lists: {
@@ -76,6 +76,11 @@ export class World {
 
     loadState(newState: WorldState) {
         this.state = newState;
+
+        // Handle hydration from older saves that lack new time properties
+        if (this.state.time.day === undefined) this.state.time.day = 1;
+        if (this.state.time.hour === undefined) this.state.time.hour = 8;
+
         // Re-link graphs to new state
         this.socialGraph = new SocialGraph(this.state.people);
         this.grid = new WorldGrid(this.state.grid);
@@ -83,38 +88,56 @@ export class World {
     }
 
     tick() {
-        // Toggle Day/Night
-        this.state.time.isNight = !this.state.time.isNight;
+        // Time Progression: 1 tick = 1 hour (User requested slower days)
+        this.state.time.hour += 1;
 
-        if (!this.state.time.isNight) {
-            // New Day (Treating 1 DayNight cycle as a "Week" for sim speed?)
-            // Or just increment week every 7 cycles? 
-            // Let's keep Sim Speed fast: 1 DayNight = 1 Week
-            this.state.time.week++;
-            if (this.state.time.week > 52) {
-                this.state.time.week = 1;
-                this.state.time.year++;
+        let isNewDay = false;
+        let isNewWeek = false;
+        let isNewYear = false;
 
-                // Increment ages yearly
-                Object.values(this.state.people).forEach(p => {
-                    if (p.isAlive) p.age++;
-                });
+        if (this.state.time.hour >= 24) {
+            this.state.time.hour -= 24;
+            this.state.time.day++;
+            isNewDay = true;
+
+            if (this.state.time.day > 7) {
+                this.state.time.day = 1;
+                this.state.time.week++;
+                isNewWeek = true;
+
+                if (this.state.time.week > 52) {
+                    this.state.time.week = 1;
+                    this.state.time.year++;
+                    isNewYear = true;
+
+                    // Increment ages yearly
+                    Object.values(this.state.people).forEach(p => {
+                        if (p.isAlive) p.age++;
+                    });
+                }
             }
         }
 
-        // Process systems
-        this.agingSystem.process(this);
-        this.economySystem.process(this);
-        this.landSystem.process(this);
-        this.buildingSystem.process(this);
-        this.crimeSystem.process(this);
-        this.eventSystem.process(this);
-        this.decisionSystem.process(this);
-        this.motionSystem.process(this);
-        this.statsSystem.process(this);
-        this.weatherSystem.process(this);
+        // Night is roughly 20:00 (8 PM) to 08:00 (8 AM)
+        this.state.time.isNight = this.state.time.hour >= 20 || this.state.time.hour < 8;
 
-        console.log(`Week ${this.state.time.week}, Year ${this.state.time.year} - Weather: ${this.state.weather} - Events: ${this.state.events.length}`);
+        const context: SystemContext = { isNewDay, isNewWeek, isNewYear };
+
+        // Process systems with context
+        this.agingSystem.process(this, context);
+        this.decisionSystem.process(this, context);
+        this.economySystem.process(this, context);
+        this.landSystem.process(this, context);
+        this.buildingSystem.process(this, context);
+        this.crimeSystem.process(this, context);
+        this.eventSystem.process(this, context);
+        this.motionSystem.process(this, context);
+        this.statsSystem.process(this, context);
+        this.weatherSystem.process(this, context);
+
+        if (isNewDay) {
+            console.log(`Day ${this.state.time.day}, Week ${this.state.time.week}, Year ${this.state.time.year} - Weather: ${this.state.weather}`);
+        }
     }
 
     logEvent(event: GameEvent) {

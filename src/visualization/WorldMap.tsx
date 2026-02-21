@@ -1,10 +1,10 @@
 import { useStore } from '../store';
-import { Text, Sky } from '@react-three/drei';
+import { Text, Sky, RoundedBox } from '@react-three/drei';
 import type { Person } from '../engine/types';
 import { useMemo } from 'react';
 import type { Building } from '../engine/types';
 
-const GRID_SIZE = 100;
+const GRID_SIZE = 200;
 
 export function WorldMap() {
     const { world, tickTrigger, setSelectedEntityId } = useStore();
@@ -95,9 +95,9 @@ function Boundary() {
     return (
         <group>
             {/* Simple bedrock below */}
-            <mesh position={[50, -1, 50]} rotation={[-Math.PI / 2, 0, 0]}>
+            <mesh position={[50, -1, 50]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
                 <planeGeometry args={[102, 102]} />
-                <meshStandardMaterial color="#1a1a1a" />
+                <meshStandardMaterial color="#1a1a1a" roughness={0.8} />
             </mesh>
         </group>
     )
@@ -106,54 +106,121 @@ function Boundary() {
 function Tree({ x, y, scale }: { x: number, y: number, scale: number }) {
     return (
         <group position={[x, 0, y]} scale={[scale, scale, scale]}>
-            <mesh position={[0, 0.5, 0]} castShadow>
+            <mesh position={[0, 0.5, 0]} castShadow receiveShadow>
                 <coneGeometry args={[0.3, 1.5, 8]} />
-                <meshStandardMaterial color="#2d6a4f" />
+                <meshPhysicalMaterial color="#2d6a4f" roughness={0.6} clearcoat={0.1} />
             </mesh>
-            <mesh position={[0, 0.1, 0]}>
+            <mesh position={[0, 0.1, 0]} castShadow receiveShadow>
                 <cylinderGeometry args={[0.1, 0.2, 0.5]} />
-                <meshStandardMaterial color="#4a4036" />
+                <meshPhysicalMaterial color="#4a4036" roughness={0.9} />
             </mesh>
         </group>
     )
 }
 
 function BuildingMesh({ building, onClick }: { building: Building, onClick: () => void }) {
-    const { world } = useStore();
-    let color = building.type === 'house' ? '#e76f51' : '#2a9d8f';
-    let height = building.type === 'house' ? 1 : 2;
-    let width = 0.8;
-    const isHouse = building.type === 'house';
-
-    if (isHouse && building.ownerId) {
-        const owner = world.state.people[building.ownerId];
-        if (owner) {
-            if (owner.stats.wealth > 1000) {
-                // Estate
-                color = '#f4a261'; // Sandy brown/Gold-ish
-                height = 1.5;
-                width = 1.2;
-            } else if (owner.stats.wealth < 100) {
-                // Shack
-                color = '#8d5524'; // Wood/Mud
-                height = 0.6;
-                width = 0.6;
-            }
-        }
-    }
-
     return (
         <group position={[building.x, 0, building.y]} onClick={(e) => { e.stopPropagation(); onClick(); }}>
-            <mesh position={[0, height / 2, 0]} castShadow receiveShadow>
-                <boxGeometry args={[width, height, width]} />
-                <meshStandardMaterial color={color} />
-            </mesh>
-            {isHouse && (
-                <mesh position={[0, height + (width * 0.5), 0]} rotation={[0, Math.PI / 4, 0]} castShadow>
-                    <coneGeometry args={[width, width, 4]} />
-                    <meshStandardMaterial color={building.ownerId && world.state.people[building.ownerId]?.stats.wealth > 1000 ? '#264653' : '#8d5524'} />
-                </mesh>
+            {building.type === 'government' && (
+                <group>
+                    {/* Grand Base */}
+                    <RoundedBox position={[0, 0.5, 0]} args={[4, 1, 4]} radius={0.1} castShadow receiveShadow>
+                        <meshPhysicalMaterial color="#dde5b6" roughness={0.2} metalness={0.1} />
+                    </RoundedBox>
+                    {/* Pillars */}
+                    {[-1.5, 1.5].map(px => [-1.5, 1.5].map(py => (
+                        <mesh key={`${px}-${py}`} position={[px, 1.5, py]} castShadow receiveShadow>
+                            <cylinderGeometry args={[0.2, 0.2, 2]} />
+                            <meshPhysicalMaterial color="#ffffff" roughness={0.2} />
+                        </mesh>
+                    )))}
+                    {/* Dome/Roof */}
+                    <mesh position={[0, 2.5, 0]} castShadow receiveShadow>
+                        <sphereGeometry args={[1.8, 16, 16, 0, Math.PI * 2, 0, Math.PI / 2]} />
+                        <meshPhysicalMaterial color="#a8dadc" roughness={0.3} metalness={0.4} />
+                    </mesh>
+                </group>
             )}
+
+            {building.type === 'hospital' && (
+                <group>
+                    {/* Modern White Block */}
+                    <RoundedBox position={[0, 1.5, 0]} args={[3, 3, 3]} radius={0.1} castShadow receiveShadow>
+                        <meshPhysicalMaterial color="#f0f3f5" roughness={0.1} clearcoat={1} />
+                    </RoundedBox>
+                    {/* Red Cross Signage */}
+                    <mesh position={[0, 1.5, 1.51]}>
+                        <planeGeometry args={[1, 0.3]} />
+                        <meshBasicMaterial color="#e63946" />
+                    </mesh>
+                    <mesh position={[0, 1.5, 1.51]}>
+                        <planeGeometry args={[0.3, 1]} />
+                        <meshBasicMaterial color="#e63946" />
+                    </mesh>
+                    {/* Helipad */}
+                    <mesh position={[0, 3.01, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+                        <circleGeometry args={[1]} />
+                        <meshBasicMaterial color="#333333" />
+                    </mesh>
+                </group>
+            )}
+
+            {building.type === 'commercial' && (
+                <group>
+                    <RoundedBox position={[0, 1, 0]} args={[2.5, 2, 2.5]} radius={0.05} castShadow receiveShadow>
+                        <meshPhysicalMaterial color="#457b9d" roughness={0.3} metalness={0.2} />
+                    </RoundedBox>
+                    {/* Shop Awning */}
+                    <mesh position={[0, 1.5, 1.3]} rotation={[0.4, 0, 0]}>
+                        <boxGeometry args={[2.6, 0.1, 0.8]} />
+                        <meshStandardMaterial color="#e63946" />
+                    </mesh>
+                </group>
+            )}
+
+            {building.type === 'park' && (
+                <group>
+                    {/* Park Fountain Component */}
+                    <mesh position={[0, 0.2, 0]} castShadow receiveShadow>
+                        <cylinderGeometry args={[1.5, 1.5, 0.4]} />
+                        <meshPhysicalMaterial color="#cccccc" roughness={0.7} />
+                    </mesh>
+                    <mesh position={[0, 0.4, 0]}>
+                        <cylinderGeometry args={[1.4, 1.4, 0.1]} />
+                        <meshPhysicalMaterial color="#00b4d8" clearcoat={1} roughness={0} />
+                    </mesh>
+                    <mesh position={[0, 0.8, 0]}>
+                        <cylinderGeometry args={[0.2, 0.4, 1]} />
+                        <meshPhysicalMaterial color="#cccccc" roughness={0.7} />
+                    </mesh>
+                </group>
+            )}
+
+            {building.type === 'house' && (() => {
+                let color = '#2a9d8f';
+                let height = 1; let width = 0.8;
+                let isWealthy = building.level === 3;
+                let isPoor = building.level === 1;
+
+                if (isWealthy) {
+                    color = '#f4a261'; height = 1.5; width = 1.2;
+                } else if (isPoor) {
+                    color = '#8d5524'; height = 0.6; width = 0.6;
+                }
+
+                return (
+                    <group>
+                        <RoundedBox position={[0, height / 2, 0]} args={[width, height, width]} radius={0.05} castShadow receiveShadow>
+                            <meshPhysicalMaterial color={color} roughness={0.3} metalness={0.1} clearcoat={0.5} />
+                        </RoundedBox>
+                        {/* Pitched Roof */}
+                        <mesh position={[0, height + (width * 0.5), 0]} rotation={[0, Math.PI / 4, 0]} castShadow receiveShadow>
+                            <coneGeometry args={[width, width, 4]} />
+                            <meshPhysicalMaterial color={isWealthy ? '#264653' : '#3c2a21'} roughness={0.4} />
+                        </mesh>
+                    </group>
+                );
+            })()}
         </group>
     );
 }
@@ -170,6 +237,10 @@ function TerrainGrid({ world, onClick }: { world: any, onClick: () => void }) {
                     let color = '#3a5a40'; // grass
                     if (cell.type === 'water') color = '#0077be';
                     if (cell.type === 'road') color = '#555555';
+                    if (cell.type === 'stone') color = '#888888';
+                    if (cell.type === 'sand') color = '#e9c46a';
+                    if (cell.type === 'forest') color = '#203a27'; // Darker grass base under trees
+
                     if (color !== '#3a5a40') {
                         c.push({ x, y, color });
                     }
@@ -182,16 +253,16 @@ function TerrainGrid({ world, onClick }: { world: any, onClick: () => void }) {
     return (
         <group onClick={(e) => { e.stopPropagation(); onClick(); }}>
             {/* Base Grass Plane */}
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[GRID_SIZE / 2, -0.05, GRID_SIZE / 2]}>
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[GRID_SIZE / 2, -0.05, GRID_SIZE / 2]} receiveShadow>
                 <planeGeometry args={[GRID_SIZE, GRID_SIZE]} />
-                <meshStandardMaterial color="#3a5a40" />
+                <meshStandardMaterial color="#3a5a40" roughness={0.9} />
             </mesh>
 
-            {/* Roads & Water (Rendered as simple planes slightly above) */}
+            {/* Roads & Features (Rendered as simple planes slightly above) */}
             {cells.map((cell, i) => (
-                <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[cell.x, 0, cell.y]}>
+                <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[cell.x, 0.01, cell.y]} receiveShadow>
                     <planeGeometry args={[1, 1]} />
-                    <meshStandardMaterial color={cell.color} />
+                    <meshPhysicalMaterial color={cell.color} roughness={cell.color === '#0077be' ? 0.1 : 0.8} metalness={cell.color === '#0077be' ? 0.8 : 0.1} clearcoat={cell.color === '#0077be' ? 1 : 0} />
                 </mesh>
             ))}
         </group>
@@ -227,53 +298,45 @@ function HumanoidAgent({ person, onClick }: { person: Person, onClick: () => voi
     return (
         <group position={position as any} rotation={rotation as any} scale={[scale * 0.4, scale * 0.4, scale * 0.4]} onClick={(e) => { e.stopPropagation(); onClick(); }}>
             {/* Body */}
-            <mesh position={[0, 1.5, 0]} castShadow>
-                <boxGeometry args={[1, 1.5, 0.5]} />
+            <RoundedBox position={[0, 1.5, 0]} args={[1, 1.5, 0.5]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color={shirtColor} />
-            </mesh>
-            {/* ... rest of mesh ... */}
+            </RoundedBox>
 
             {/* Head */}
-            <mesh position={[0, 2.6, 0]} castShadow>
-                <boxGeometry args={[0.8, 0.9, 0.8]} />
-                <meshStandardMaterial color={skinColor} />
-            </mesh>
+            <RoundedBox position={[0, 2.6, 0]} args={[0.8, 0.9, 0.8]} radius={0.2} castShadow receiveShadow>
+                <meshStandardMaterial color={skinColor} roughness={0.4} />
+            </RoundedBox>
 
             {/* Hair */}
-            <mesh position={[0, 3.1, 0]} castShadow>
-                <boxGeometry args={[0.9, 0.2, 0.9]} />
+            <RoundedBox position={[0, 3.1, 0]} args={[0.9, 0.2, 0.9]} radius={0.05} castShadow receiveShadow>
                 <meshStandardMaterial color={hairColor} />
-            </mesh>
+            </RoundedBox>
 
             {/* Eyes */}
             <mesh position={[0.2, 2.7, 0.41]}>
                 <sphereGeometry args={[0.1]} />
-                <meshStandardMaterial color="black" />
+                <meshPhysicalMaterial color="black" roughness={0.1} clearcoat={1} />
             </mesh>
             <mesh position={[-0.2, 2.7, 0.41]}>
                 <sphereGeometry args={[0.1]} />
-                <meshStandardMaterial color="black" />
+                <meshPhysicalMaterial color="black" roughness={0.1} clearcoat={1} />
             </mesh>
 
             {/* Arms */}
-            <mesh position={[0.6, 1.5, 0]}>
-                <boxGeometry args={[0.3, 1.5, 0.3]} />
+            <RoundedBox position={[0.6, 1.5, 0]} args={[0.3, 1.5, 0.3]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color={skinColor} />
-            </mesh>
-            <mesh position={[-0.6, 1.5, 0]}>
-                <boxGeometry args={[0.3, 1.5, 0.3]} />
+            </RoundedBox>
+            <RoundedBox position={[-0.6, 1.5, 0]} args={[0.3, 1.5, 0.3]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color={skinColor} />
-            </mesh>
+            </RoundedBox>
 
             {/* Legs */}
-            <mesh position={[0.3, 0.5, 0]}>
-                <boxGeometry args={[0.35, 1.2, 0.35]} />
+            <RoundedBox position={[0.3, 0.5, 0]} args={[0.35, 1.2, 0.35]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color="#333" />
-            </mesh>
-            <mesh position={[-0.3, 0.5, 0]}>
-                <boxGeometry args={[0.35, 1.2, 0.35]} />
+            </RoundedBox>
+            <RoundedBox position={[-0.3, 0.5, 0]} args={[0.35, 1.2, 0.35]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color="#333" />
-            </mesh>
+            </RoundedBox>
 
             {/* Name Tag */}
             <Text

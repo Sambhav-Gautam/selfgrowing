@@ -2,7 +2,7 @@
 export type ID = string;
 
 // The Grid World
-export type CellType = 'grass' | 'road' | 'water' | 'wall';
+export type CellType = 'grass' | 'road' | 'water' | 'wall' | 'stone' | 'sand' | 'forest';
 
 export interface GridCell {
   x: number;
@@ -14,7 +14,7 @@ export interface GridCell {
 
 export interface Building {
   id: ID;
-  type: 'house' | 'school' | 'hospital' | 'jail' | 'farm' | 'shop' | 'police_station';
+  type: 'house' | 'school' | 'hospital' | 'jail' | 'farm' | 'shop' | 'police_station' | 'government' | 'commercial' | 'park';
   x: number;
   y: number;
   ownerId?: ID;
@@ -97,12 +97,14 @@ export interface Relationship {
 // World State
 export interface WorldState {
   people: Record<ID, Person>;
-  grid: GridCell[][]; // 100x100 grid
+  grid: GridCell[][]; // 200x200 grid
   buildings: Record<ID, Building>;
   institutions: Record<ID, Institution>;
   time: {
     year: number;
     week: number;
+    day: number;
+    hour: number;
     isNight: boolean;
   };
   weather: 'clear' | 'rain' | 'snow';
@@ -113,6 +115,12 @@ export interface WorldState {
     govtFunds: number;
     taxRate: number;
   };
+}
+
+export interface SystemContext {
+  isNewDay: boolean;
+  isNewWeek: boolean;
+  isNewYear: boolean;
 }
 
 export interface Institution {

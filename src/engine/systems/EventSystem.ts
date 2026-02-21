@@ -2,7 +2,8 @@ import { World } from '../World.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class EventSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewWeek) return;
         // Run logic less frequently? Every tick is fine for now.
 
         const stats = world.statsSystem.getStats();

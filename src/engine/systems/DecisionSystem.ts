@@ -3,15 +3,23 @@ import type { Person, ID } from '../types.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class DecisionSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        // Decisions and Daily Needs only update once per day
+        if (!context.isNewDay) return;
+
         const people = world.socialGraph.getAllPeople();
 
         people.forEach(person => {
             if (!person.isAlive) return;
-            if (person.age < 5) return; // Toddlers don't plot treason yet
 
-            // Decrement needs (hunger)
-            person.needs.food -= 5;
+            if (person.age < 5) {
+                // Toddlers are fed by parents/community automatically, keep food high
+                person.needs.food = 100;
+                return;
+            }
+
+            // Decrement needs (hunger) daily
+            person.needs.food -= 10;
             if (person.needs.food < 0) person.needs.food = 0;
 
             // 1. Needs

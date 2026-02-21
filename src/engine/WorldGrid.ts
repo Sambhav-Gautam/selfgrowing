@@ -1,6 +1,6 @@
 import type { GridCell, CellType } from './types.js';
 
-export const GRID_SIZE = 100;
+export const GRID_SIZE = 200;
 
 export class WorldGrid {
     cells: GridCell[][];

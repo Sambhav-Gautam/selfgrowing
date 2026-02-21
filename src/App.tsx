@@ -10,39 +10,21 @@ function App() {
      "Maximum update depth exceeded" due to object identity changes.
   */
   const world = useStore((state) => state.world);
-  const paused = useStore((state) => state.paused);
-  const togglePause = useStore((state) => state.togglePause);
-  const speed = useStore((state) => state.speed);
-  const setSpeed = useStore((state) => state.setSpeed);
   // Subscribe to tickTrigger to force re-renders when world mutates
   const tickTrigger = useStore((state) => state.tickTrigger);
   void tickTrigger; // Suppress unused variable warning
 
   const tickValues = world.state.time;
 
-  // Force re-render for UI when tickTrigger changes
-  // Actually useStore with selector will re-render if selection changes?
-  // We need to select primitive values, or object reference if changed.
-  // tickValues is nested object reference, might not update if we mutate strictly?
-  // But we spread it in advance() so it should work.
-
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
       <Scene />
 
-      <div style={{ position: 'absolute', top: 10, left: 10, color: 'white', background: 'rgba(0,0,0,0.5)', padding: 10 }}>
-        <h1>WorldGen</h1>
-        <div>Year: {tickValues.year} | Week: {tickValues.week}</div>
-        <div>
-          <button onClick={togglePause}>{paused ? 'Resume' : 'Pause'}</button>
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value={speed}
-            onChange={(e) => setSpeed(Number(e.target.value))}
-          />
-          Speed: {speed}x
+      <div className="glass-panel" style={{ position: 'absolute', top: 20, left: 20, minWidth: '150px' }}>
+        <h1 style={{ margin: '0 0 10px 0', fontSize: '24px', fontWeight: '700', letterSpacing: '-0.5px' }}>WorldGen</h1>
+        <div style={{ fontSize: '13px', color: '#aaa', marginBottom: '0px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          <div>Year <span style={{ color: 'white', fontWeight: 600 }}>{tickValues.year}</span> &nbsp;&middot;&nbsp; Week <span style={{ color: 'white', fontWeight: 600 }}>{tickValues.week}</span></div>
+          <div>Day <span style={{ color: 'white', fontWeight: 600 }}>{tickValues.day ?? 1}</span> &nbsp;&middot;&nbsp; {(tickValues.hour ?? 8).toString().padStart(2, '0')}:00</div>
         </div>
       </div>
 

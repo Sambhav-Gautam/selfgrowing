@@ -2,7 +2,8 @@ import { World } from '../World.js';
 
 
 export class EconomySystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewWeek) return;
         const people = world.socialGraph.getAllPeople();
         const buildings = Object.values(world.state.buildings);
 

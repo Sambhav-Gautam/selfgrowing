@@ -22,7 +22,7 @@ export class StatsSystem {
         homelessCount: 0
     };
 
-    process(world: World) {
+    process(world: World, _context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
         // Run every 10 ticks to save perf? Or every tick for responsiveness?
         // Let's run every tick for now, optimizing later if needed.
 

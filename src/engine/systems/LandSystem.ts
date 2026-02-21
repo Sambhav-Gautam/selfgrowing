@@ -2,7 +2,8 @@ import { World } from '../World.js';
 import { GRID_SIZE } from '../WorldGrid.js';
 
 export class LandSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewDay) return;
         // 1. Land Value dynamics (simple for now)
         // 2. People buying land
 

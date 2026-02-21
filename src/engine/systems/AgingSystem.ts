@@ -3,14 +3,19 @@ import type { Person, ID } from '../types.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class AgingSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewWeek) return;
+
         const people = world.socialGraph.getAllPeople();
 
         people.forEach(person => {
             if (!person.isAlive) return;
 
             this.handleMortality(person, world);
-            this.handleReproduction(person, world);
+            // Don't handle reproduction if they just died
+            if (person.isAlive) {
+                this.handleReproduction(person, world);
+            }
         });
     }
 

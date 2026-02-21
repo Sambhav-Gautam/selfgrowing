@@ -3,7 +3,8 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Building } from '../types.js';
 
 export class BuildingSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewDay) return;
         const people = world.socialGraph.getAllPeople();
 
         people.forEach(owner => {

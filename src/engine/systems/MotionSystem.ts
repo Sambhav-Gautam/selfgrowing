@@ -1,7 +1,7 @@
 import { World } from '../World.js';
 
 export class MotionSystem {
-    process(world: World) {
+    process(world: World, _context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
         const people = world.socialGraph.getAllPeople();
         const isNight = world.state.time.isNight;
 
@@ -32,12 +32,7 @@ export class MotionSystem {
                 } else {
                     // Homeless: Sleep on street
                     if (person.state !== 'sleeping') {
-                        // Find random spot if not already there?
-                        // actually just sleep where you are or find a park?
-                        // Let's find a road
                         person.state = 'sleeping';
-                        // Find nearby road to look "natural" or just sidewalk?
-                        // Current position is fine.
                     }
                     person.needs.rest = Math.min(100, person.needs.rest + 5);
                 }
@@ -60,12 +55,12 @@ export class MotionSystem {
                 } else {
                     // Unemployed / Day off
                     // Wander Logic
-                    if (Math.random() < 0.1 && person.state === 'idle') {
-                        const range = 5;
+                    if (Math.random() < 0.2 && person.state === 'idle') {
+                        const range = 20; // Increased range so they walk further
                         const rX = Math.floor(Math.random() * (range * 2 + 1)) - range;
                         const rY = Math.floor(Math.random() * (range * 2 + 1)) - range;
-                        const newX = Math.max(0, Math.min(99, person.x + rX));
-                        const newY = Math.max(0, Math.min(99, person.y + rY));
+                        const newX = Math.max(0, Math.min(199, person.x + rX)); // Fixed bounds to 200 grid
+                        const newY = Math.max(0, Math.min(199, person.y + rY));
                         person.targetX = newX;
                         person.targetY = newY;
                     }
@@ -74,23 +69,27 @@ export class MotionSystem {
 
             // Movement Execution
             if (person.targetX !== undefined && person.targetY !== undefined) {
-                // Simple movement logic: Move 1 step closer
-                const dx = person.targetX - person.x;
-                const dy = person.targetY - person.y;
+                // Move quickly towards target: 4 steps per tick
+                const SPEED = 4;
 
-                if (dx === 0 && dy === 0) {
+                let dx = person.targetX - person.x;
+                let dy = person.targetY - person.y;
+
+                if (Math.abs(dx) <= SPEED && Math.abs(dy) <= SPEED) {
                     // Arrived
-                    // State handled above
+                    person.x = person.targetX;
+                    person.y = person.targetY;
                     person.targetX = undefined;
                     person.targetY = undefined;
+                    // State handled above 
                 } else {
                     person.state = 'moving';
-                    // Move X first, then Y (Manhattan-ish)
-                    if (Math.abs(dx) > Math.abs(dy)) {
-                        person.x += Math.sign(dx);
-                    } else {
-                        person.y += Math.sign(dy);
-                    }
+                    // Move diagonally / towards target
+                    if (Math.abs(dx) > SPEED) person.x += Math.sign(dx) * SPEED;
+                    else person.x += dx;
+
+                    if (Math.abs(dy) > SPEED) person.y += Math.sign(dy) * SPEED;
+                    else person.y += dy;
                 }
             }
         });

@@ -1,7 +1,8 @@
 import { World } from '../World.js';
 
 export class WeatherSystem {
-    process(world: World) {
+    process(world: World, context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
+        if (!context.isNewDay) return;
         // Change weather occasionally
         if (Math.random() < 0.01) {
             const weathers: ('clear' | 'rain' | 'snow')[] = ['clear', 'rain', 'snow'];
