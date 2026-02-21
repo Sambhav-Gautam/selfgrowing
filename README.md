@@ -39,10 +39,6 @@
 - **Persistent Cloud State** 
   The history graph and world state are continually saved to JSON and committed automatically via headless GitHub Actions.
 
-<div align="center">
-  <img src="assets/screenshot2.png" alt="Simulation Pacing" width="100%">
-</div>
-
 ---
 
 ## Workspace Setup
