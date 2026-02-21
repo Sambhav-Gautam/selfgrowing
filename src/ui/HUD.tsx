@@ -4,6 +4,8 @@ export function HUD() {
     const world = useStore(state => state.world);
     const selectedId = useStore(state => state.selectedEntityId);
     const tickTrigger = useStore(state => state.tickTrigger);
+    const paused = useStore(state => state.paused);
+    const speed = useStore(state => state.speed);
     void tickTrigger;
 
     const stats = world.statsSystem.getStats();
@@ -36,12 +38,12 @@ export function HUD() {
                     <div style={{ display: 'flex', gap: '8px' }}>
                         <button
                             onClick={(e) => { e.stopPropagation(); useStore.getState().togglePause(); }}
-                            style={{ flex: 1, padding: '6px', background: useStore(s => s.paused) ? '#f72585' : '#4cc9f0', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 600 }}
+                            style={{ flex: 1, padding: '6px', background: paused ? '#f72585' : '#4cc9f0', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 600 }}
                         >
-                            {useStore(s => s.paused) ? '▶ PLAY' : '⏸ PAUSE'}
+                            {paused ? '▶ PLAY' : '⏸ PAUSE'}
                         </button>
                         <select
-                            value={useStore(s => s.speed)}
+                            value={speed}
                             onChange={(e) => { e.stopPropagation(); useStore.getState().setSpeed(Number(e.target.value)); }}
                             style={{ padding: '6px', background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px', cursor: 'pointer' }}
                         >

@@ -1,4 +1,5 @@
 import { World } from '../World.js';
+import type { Person } from '../types.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export class CrimeSystem {
@@ -28,7 +29,7 @@ export class CrimeSystem {
         });
     }
 
-    commitCrime(criminal: any, world: World) {
+    commitCrime(criminal: Person, world: World) {
         // Find victim: Wealthy preferred
         const people = world.socialGraph.getAllPeople();
         // Filter for local victims?
@@ -107,7 +108,7 @@ export class CrimeSystem {
         }
     }
 
-    arrest(criminal: any, world: World, reason: string) {
+    arrest(criminal: Person, world: World, reason: string) {
         criminal.state = 'imprisoned';
         criminal.x = 0;
         criminal.y = 0;

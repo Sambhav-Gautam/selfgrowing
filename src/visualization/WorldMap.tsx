@@ -1,7 +1,7 @@
 import { useStore } from '../store';
 import { Text, Sky, RoundedBox } from '@react-three/drei';
 import type { Person } from '../engine/types';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import type { Building } from '../engine/types';
 
 const GRID_SIZE = 200;
@@ -15,7 +15,7 @@ export function WorldMap() {
     const buildings = Object.values(world.state.buildings);
 
     // Generate static trees only once based on grid seed (pseudo-random)
-    const trees = useMemo(() => {
+    const [trees] = useState(() => {
         const t = [];
         for (let i = 0; i < 200; i++) {
             const x = Math.floor(Math.random() * GRID_SIZE);
@@ -23,7 +23,7 @@ export function WorldMap() {
             t.push({ x, y, scale: 0.5 + Math.random() * 0.5 });
         }
         return t;
-    }, []);
+    });
 
     return (
         <group>
@@ -59,15 +59,8 @@ export function WorldMap() {
 }
 
 function WeatherOverlay({ weather }: { weather: 'clear' | 'rain' | 'snow' }) {
-    if (weather === 'clear') return null;
-
-    // Rain is gray, Snow is white
-    const particleColor = weather === 'rain' ? '#aaaaaa' : '#ffffff';
-    // Rain is lines, Snow is box/sphere. Simplified: box for both.
-    // Rain should fall fast? Just static "particles" for now as a visual indicator.
-
     const count = 500;
-    const particles = useMemo(() => {
+    const [particles] = useState(() => {
         const p = [];
         for (let i = 0; i < count; i++) {
             p.push({
@@ -77,7 +70,14 @@ function WeatherOverlay({ weather }: { weather: 'clear' | 'rain' | 'snow' }) {
             });
         }
         return p;
-    }, []);
+    });
+
+    if (weather === 'clear') return null;
+
+    // Rain is gray, Snow is white
+    const particleColor = weather === 'rain' ? '#aaaaaa' : '#ffffff';
+    // Rain is lines, Snow is box/sphere. Simplified: box for both.
+    // Rain should fall fast? Just static "particles" for now as a visual indicator.
 
     return (
         <group>
@@ -199,8 +199,8 @@ function BuildingMesh({ building, onClick }: { building: Building, onClick: () =
             {building.type === 'house' && (() => {
                 let color = '#2a9d8f';
                 let height = 1; let width = 0.8;
-                let isWealthy = building.level === 3;
-                let isPoor = building.level === 1;
+                const isWealthy = building.level === 3;
+                const isPoor = building.level === 1;
 
                 if (isWealthy) {
                     color = '#f4a261'; height = 1.5; width = 1.2;
@@ -225,6 +225,7 @@ function BuildingMesh({ building, onClick }: { building: Building, onClick: () =
     );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function TerrainGrid({ world, onClick }: { world: any, onClick: () => void }) {
     // ... same code ...
     // Determine visuals for each cell
@@ -292,11 +293,11 @@ function HumanoidAgent({ person, onClick }: { person: Person, onClick: () => voi
     if (person.stats.wealth < 50) shirtColor = '#495057'; // Rags
 
     // Sleeping Rotation
-    const rotation = person.state === 'sleeping' ? [-Math.PI / 2, 0, 0] : [0, 0, 0];
-    const position = person.state === 'sleeping' ? [x, 0.2, y] : [x, 0, y];
+    const rotation: [number, number, number] = person.state === 'sleeping' ? [-Math.PI / 2, 0, 0] : [0, 0, 0];
+    const position: [number, number, number] = person.state === 'sleeping' ? [x, 0.2, y] : [x, 0, y];
 
     return (
-        <group position={position as any} rotation={rotation as any} scale={[scale * 0.4, scale * 0.4, scale * 0.4]} onClick={(e) => { e.stopPropagation(); onClick(); }}>
+        <group position={position} rotation={rotation} scale={[scale * 0.4, scale * 0.4, scale * 0.4]} onClick={(e) => { e.stopPropagation(); onClick(); }}>
             {/* Body */}
             <RoundedBox position={[0, 1.5, 0]} args={[1, 1.5, 0.5]} radius={0.1} castShadow receiveShadow>
                 <meshStandardMaterial color={shirtColor} />

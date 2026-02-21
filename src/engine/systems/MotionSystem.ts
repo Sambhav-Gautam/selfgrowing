@@ -1,6 +1,7 @@
 import { World } from '../World.js';
 
 export class MotionSystem {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     process(world: World, _context: { isNewDay: boolean, isNewWeek: boolean, isNewYear: boolean }) {
         const people = world.socialGraph.getAllPeople();
         const isNight = world.state.time.isNight;
@@ -72,8 +73,8 @@ export class MotionSystem {
                 // Move quickly towards target: 4 steps per tick
                 const SPEED = 4;
 
-                let dx = person.targetX - person.x;
-                let dy = person.targetY - person.y;
+                const dx = person.targetX - person.x;
+                const dy = person.targetY - person.y;
 
                 if (Math.abs(dx) <= SPEED && Math.abs(dy) <= SPEED) {
                     // Arrived

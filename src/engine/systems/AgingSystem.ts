@@ -68,7 +68,7 @@ export class AgingSystem {
             if (potentialPartner) {
                 // Chance to start dating
                 if (Math.random() < 0.1) {
-                    let rel = person.relationships[potentialPartner];
+                    const rel = person.relationships[potentialPartner];
                     if (!rel) {
                         world.socialGraph.addRelationship(person.id, potentialPartner, 'friend', 10);
                         world.socialGraph.addRelationship(potentialPartner, person.id, 'friend', 10);

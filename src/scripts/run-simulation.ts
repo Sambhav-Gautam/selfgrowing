@@ -7,7 +7,6 @@ import { seedWorld } from '../engine/seed.js';
 // Paths
 const DATA_DIR = path.join(process.cwd(), 'public', 'data');
 const STATE_FILE = path.join(DATA_DIR, 'world.json');
-const HISTORY_FILE = path.join(DATA_DIR, 'history.json');
 
 // Ensure data dir exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -58,17 +57,9 @@ console.log(`Saved world state to ${STATE_FILE}`);
 // For now, we just dump the events currently in state (which are strictly recent if we trim them)
 // OR we append them to a history log.
 // World.ts trims events > 1000.
-// Let's just save the world state which contains recent events. 
+// Let's just save the world state which contains recent events.
 // If we want a permanent history log, we should read history.json, parse, append new events, save.
-
-let history = [];
-if (fs.existsSync(HISTORY_FILE)) {
-    try {
-        history = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf-8'));
-    } catch (e) { }
-}
 
 // Append NEW events since last save?
 // Complex to track. For now, let's just assume `state.events` is the log we care about.
 // Or we can snapshot the state.
-

@@ -32,7 +32,7 @@ export class WeatherSystem {
             }
 
             if (world.state.weather !== newWeather) {
-                world.state.weather = newWeather as any;
+                world.state.weather = newWeather as 'clear' | 'rain' | 'snow';
                 // Log event? Maybe too spammy.
             }
         }

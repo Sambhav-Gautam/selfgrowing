@@ -1,4 +1,5 @@
 import { World } from '../World.js';
+import type { Person } from '../types.js';
 import { GRID_SIZE } from '../WorldGrid.js';
 
 export class LandSystem {
@@ -37,7 +38,7 @@ export class LandSystem {
         return owned;
     }
 
-    tryBuyLand(person: any, world: World) {
+    tryBuyLand(person: Person, world: World) {
         const x = person.x;
         const y = person.y;
 

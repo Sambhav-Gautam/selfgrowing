@@ -1,13 +1,12 @@
 import { useStore } from '../store';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 export function EventLog() {
-    const { world, tickTrigger } = useStore();
-    const [events, setEvents] = useState(world.state.events);
+    const { world } = useStore();
 
-    useEffect(() => {
-        setEvents([...world.state.events].reverse());
-    }, [tickTrigger, world.state.events, world]);
+    const events = useMemo(() => {
+        return [...world.state.events].reverse();
+    }, [world.state.events]);
 
     return (
         <div className="glass-panel" style={{
