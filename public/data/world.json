@@ -9,9 +9,9 @@
       "gender": "male",
       "x": 23,
       "y": 22,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 896,
+        "wealth": 876,
         "influence": 5,
         "reputation": 0,
         "happiness": 72,
@@ -23,10 +23,15 @@
           "targetId": "a745c818-2c19-4525-884d-38a84774b550",
           "type": "friend",
           "value": 15
+        },
+        "b3479593-bdd4-46bd-9370-34bd37b171e2": {
+          "targetId": "b3479593-bdd4-46bd-9370-34bd37b171e2",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 56,
+        "food": 51,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -49,10 +54,10 @@
       "isAlive": true,
       "gender": "female",
       "x": 19,
-      "y": 18,
+      "y": 19,
       "state": "moving",
       "stats": {
-        "wealth": 118,
+        "wealth": 138,
         "influence": 8,
         "reputation": 0,
         "happiness": 91,
@@ -67,7 +72,7 @@
         }
       },
       "needs": {
-        "food": 52,
+        "food": 47,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -96,11 +101,11 @@
       "yearBorn": -22,
       "isAlive": true,
       "gender": "male",
-      "x": 22,
+      "x": 23,
       "y": 13,
       "state": "moving",
       "stats": {
-        "wealth": 118,
+        "wealth": 138,
         "influence": 3,
         "reputation": 0,
         "happiness": 75,
@@ -115,7 +120,7 @@
         }
       },
       "needs": {
-        "food": 60,
+        "food": 55,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -144,11 +149,11 @@
       "yearBorn": -39,
       "isAlive": true,
       "gender": "female",
-      "x": 19,
+      "x": 20,
       "y": 23,
       "state": "moving",
       "stats": {
-        "wealth": 111,
+        "wealth": 126,
         "influence": 7,
         "reputation": 0,
         "happiness": 92,
@@ -173,7 +178,7 @@
         }
       },
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -203,10 +208,10 @@
       "isAlive": true,
       "gender": "male",
       "x": 14,
-      "y": 23,
+      "y": 24,
       "state": "moving",
       "stats": {
-        "wealth": 68,
+        "wealth": 88,
         "influence": 4,
         "reputation": 0,
         "happiness": 87,
@@ -223,10 +228,15 @@
           "targetId": "b4290a2f-d59c-4464-9dad-caa845efb9a2",
           "type": "friend",
           "value": 10
+        },
+        "6f36c6af-7e83-4957-9b7d-546dd1c7088a": {
+          "targetId": "6f36c6af-7e83-4957-9b7d-546dd1c7088a",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -256,10 +266,10 @@
       "isAlive": true,
       "gender": "female",
       "x": 13,
-      "y": 21,
+      "y": 22,
       "state": "moving",
       "stats": {
-        "wealth": 103,
+        "wealth": 123,
         "influence": 4,
         "reputation": 0,
         "happiness": 70,
@@ -274,7 +284,7 @@
         }
       },
       "needs": {
-        "food": 53,
+        "food": 48,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -304,10 +314,10 @@
       "isAlive": true,
       "gender": "male",
       "x": 27,
-      "y": 20,
+      "y": 21,
       "state": "moving",
       "stats": {
-        "wealth": 98,
+        "wealth": 118,
         "influence": 2,
         "reputation": 0,
         "happiness": 98,
@@ -322,7 +332,7 @@
         }
       },
       "needs": {
-        "food": 50,
+        "food": 45,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -353,18 +363,24 @@
       "gender": "female",
       "x": 22,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 13,
+        "wealth": 8,
         "influence": 3,
         "reputation": 0,
         "happiness": 75,
         "crimePropensity": 0,
         "fertility": 80
       },
-      "relationships": {},
+      "relationships": {
+        "1baace52-e87c-4336-be97-70707bfbd158": {
+          "targetId": "1baace52-e87c-4336-be97-70707bfbd158",
+          "type": "friend",
+          "value": 10
+        }
+      },
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -387,7 +403,7 @@
       "gender": "male",
       "x": 17,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 40,
         "influence": 7,
@@ -404,7 +420,7 @@
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -427,7 +443,7 @@
       "gender": "female",
       "x": 13,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 71,
         "influence": 8,
@@ -444,7 +460,7 @@
         }
       },
       "needs": {
-        "food": 54,
+        "food": 49,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -467,7 +483,7 @@
       "gender": "male",
       "x": 12,
       "y": 27,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 54,
         "influence": 9,
@@ -481,10 +497,15 @@
           "targetId": "80232931-acdb-4edb-8d78-0e60f1cf2655",
           "type": "friend",
           "value": 15
+        },
+        "c063f651-353a-4c46-b9f8-e57a233d7788": {
+          "targetId": "c063f651-353a-4c46-b9f8-e57a233d7788",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 56,
+        "food": 51,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -507,7 +528,7 @@
       "gender": "female",
       "x": 12,
       "y": 16,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 8,
         "influence": 1,
@@ -518,7 +539,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 52,
+        "food": 47,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -541,7 +562,7 @@
       "gender": "male",
       "x": 24,
       "y": 24,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 61,
         "influence": 2,
@@ -552,7 +573,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 53,
+        "food": 48,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -592,7 +613,7 @@
         }
       },
       "needs": {
-        "food": 61,
+        "food": 56,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -615,7 +636,7 @@
       "gender": "male",
       "x": 14,
       "y": 27,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 25,
         "influence": 0,
@@ -637,7 +658,7 @@
         }
       },
       "needs": {
-        "food": 60,
+        "food": 55,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -660,7 +681,7 @@
       "gender": "female",
       "x": 14,
       "y": 25,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 36,
         "influence": 5,
@@ -682,7 +703,7 @@
         }
       },
       "needs": {
-        "food": 61,
+        "food": 56,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -705,7 +726,7 @@
       "gender": "male",
       "x": 22,
       "y": 23,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 9,
         "influence": 6,
@@ -727,7 +748,7 @@
         }
       },
       "needs": {
-        "food": 57,
+        "food": 52,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -750,7 +771,7 @@
       "gender": "female",
       "x": 12,
       "y": 23,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 42,
         "influence": 4,
@@ -764,10 +785,15 @@
           "targetId": "e92d102f-e9a0-4986-9b91-12ad1e3ef6f2",
           "type": "friend",
           "value": 10
+        },
+        "765ccb89-5499-4a3b-ad0c-9314b405830a": {
+          "targetId": "765ccb89-5499-4a3b-ad0c-9314b405830a",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 60,
+        "food": 55,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -790,9 +816,9 @@
       "gender": "male",
       "x": 12,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 27,
+        "wealth": 22,
         "influence": 4,
         "reputation": 0,
         "happiness": 88,
@@ -801,7 +827,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -824,7 +850,7 @@
       "gender": "female",
       "x": 12,
       "y": 19,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 35,
         "influence": 2,
@@ -838,10 +864,15 @@
           "targetId": "7fcd551e-f4a7-412a-99e2-c78200e76bab",
           "type": "friend",
           "value": 10
+        },
+        "1774963b-b13c-47ea-8589-c47e2b497a3b": {
+          "targetId": "1774963b-b13c-47ea-8589-c47e2b497a3b",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -864,7 +895,7 @@
       "gender": "male",
       "x": 74,
       "y": 19,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 47,
         "influence": 8,
@@ -877,11 +908,11 @@
         "568f0d50-716b-4e01-a3c4-1d895350e4d6": {
           "targetId": "568f0d50-716b-4e01-a3c4-1d895350e4d6",
           "type": "friend",
-          "value": 15
+          "value": 20
         }
       },
       "needs": {
-        "food": 56,
+        "food": 51,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -904,7 +935,7 @@
       "gender": "female",
       "x": 74,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 56,
         "influence": 6,
@@ -921,7 +952,7 @@
         }
       },
       "needs": {
-        "food": 56,
+        "food": 51,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -944,7 +975,7 @@
       "gender": "male",
       "x": 87,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 35,
         "influence": 4,
@@ -966,7 +997,7 @@
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -989,7 +1020,7 @@
       "gender": "female",
       "x": 77,
       "y": 24,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 15,
         "influence": 9,
@@ -1000,7 +1031,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 50,
+        "food": 45,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1023,7 +1054,7 @@
       "gender": "male",
       "x": 79,
       "y": 27,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 75,
         "influence": 5,
@@ -1045,7 +1076,7 @@
         }
       },
       "needs": {
-        "food": 58,
+        "food": 53,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1068,7 +1099,7 @@
       "gender": "female",
       "x": 75,
       "y": 20,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 29,
         "influence": 7,
@@ -1085,7 +1116,7 @@
         }
       },
       "needs": {
-        "food": 55,
+        "food": 50,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1108,7 +1139,7 @@
       "gender": "male",
       "x": 72,
       "y": 24,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 22,
         "influence": 6,
@@ -1119,7 +1150,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 56,
+        "food": 51,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1142,9 +1173,9 @@
       "gender": "female",
       "x": 72,
       "y": 27,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 13,
+        "wealth": 8,
         "influence": 0,
         "reputation": 0,
         "happiness": 80,
@@ -1160,11 +1191,16 @@
         "2f744166-aed6-44c7-a718-945e37c6b1d2": {
           "targetId": "2f744166-aed6-44c7-a718-945e37c6b1d2",
           "type": "friend",
-          "value": 15
+          "value": 20
+        },
+        "bb3c39c9-e7a0-4144-8275-008889dbbc38": {
+          "targetId": "bb3c39c9-e7a0-4144-8275-008889dbbc38",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 48,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1187,9 +1223,9 @@
       "gender": "male",
       "x": 81,
       "y": 18,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 90,
+        "wealth": 85,
         "influence": 7,
         "reputation": 0,
         "happiness": 71,
@@ -1209,7 +1245,7 @@
         }
       },
       "needs": {
-        "food": 48,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1272,7 +1308,7 @@
       "gender": "male",
       "x": 75,
       "y": 12,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 30,
         "influence": 4,
@@ -1283,7 +1319,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 51,
+        "food": 46,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1306,9 +1342,9 @@
       "gender": "female",
       "x": 82,
       "y": 23,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 1257,
+        "wealth": 1232,
         "influence": 6,
         "reputation": 0,
         "happiness": 32,
@@ -1317,7 +1353,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 49,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1341,9 +1377,9 @@
       "gender": "male",
       "x": 72,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 1126,
+        "wealth": 1106,
         "influence": 1,
         "reputation": 0,
         "happiness": 50,
@@ -1355,10 +1391,15 @@
           "targetId": "1bbe1ece-c77d-4df9-99b9-03572f86f402",
           "type": "friend",
           "value": 10
+        },
+        "568f0d50-716b-4e01-a3c4-1d895350e4d6": {
+          "targetId": "568f0d50-716b-4e01-a3c4-1d895350e4d6",
+          "type": "friend",
+          "value": 10
         }
       },
       "needs": {
-        "food": 52,
+        "food": 47,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1381,7 +1422,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 84,
-      "y": 11,
+      "y": 10,
       "state": "moving",
       "stats": {
         "wealth": 21,
@@ -1399,7 +1440,7 @@
         }
       },
       "needs": {
-        "food": 50,
+        "food": 45,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1424,7 +1465,7 @@
       "gender": "male",
       "x": 78,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 39,
         "influence": 8,
@@ -1451,7 +1492,7 @@
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1474,7 +1515,7 @@
       "gender": "female",
       "x": 83,
       "y": 21,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 47,
         "influence": 5,
@@ -1501,7 +1542,7 @@
         }
       },
       "needs": {
-        "food": 62,
+        "food": 57,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1524,7 +1565,7 @@
       "gender": "male",
       "x": 76,
       "y": 24,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 36,
         "influence": 4,
@@ -1541,7 +1582,7 @@
         }
       },
       "needs": {
-        "food": 59,
+        "food": 54,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1564,7 +1605,7 @@
       "gender": "female",
       "x": 73,
       "y": 24,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 65,
         "influence": 1,
@@ -1581,7 +1622,7 @@
         }
       },
       "needs": {
-        "food": 59,
+        "food": 54,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1604,7 +1645,7 @@
       "gender": "male",
       "x": 81,
       "y": 18,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 8,
         "influence": 5,
@@ -1615,7 +1656,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 57,
+        "food": 52,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1638,7 +1679,7 @@
       "gender": "female",
       "x": 78,
       "y": 26,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 17,
         "influence": 6,
@@ -1660,7 +1701,7 @@
         }
       },
       "needs": {
-        "food": 59,
+        "food": 54,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1683,9 +1724,9 @@
       "gender": "male",
       "x": 54,
       "y": 75,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 1464,
+        "wealth": 1439,
         "influence": 3,
         "reputation": 0,
         "happiness": 74,
@@ -1705,7 +1746,7 @@
         }
       },
       "needs": {
-        "food": 49,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1729,7 +1770,7 @@
       "gender": "female",
       "x": 48,
       "y": 78,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 36,
         "influence": 2,
@@ -1746,7 +1787,7 @@
         }
       },
       "needs": {
-        "food": 63,
+        "food": 58,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1769,7 +1810,7 @@
       "gender": "male",
       "x": 44,
       "y": 78,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 54,
         "influence": 0,
@@ -1786,7 +1827,7 @@
         }
       },
       "needs": {
-        "food": 55,
+        "food": 50,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1808,8 +1849,8 @@
       "isAlive": true,
       "gender": "female",
       "x": 50,
-      "y": 79,
-      "state": "sleeping",
+      "y": 80,
+      "state": "moving",
       "stats": {
         "wealth": 38,
         "influence": 5,
@@ -1841,7 +1882,7 @@
         }
       },
       "needs": {
-        "food": 61,
+        "food": 56,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1853,7 +1894,9 @@
         "hairColor": "#4a4a4a",
         "height": 1.2677089835793953,
         "bodyType": "average"
-      }
+      },
+      "targetX": 51,
+      "targetY": 83
     },
     "82bc22e6-aaf4-469e-a46f-90f09450bff3": {
       "id": "82bc22e6-aaf4-469e-a46f-90f09450bff3",
@@ -1864,7 +1907,7 @@
       "gender": "male",
       "x": 54,
       "y": 85,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 43,
         "influence": 2,
@@ -1875,7 +1918,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 62,
+        "food": 57,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1898,7 +1941,7 @@
       "gender": "female",
       "x": 51,
       "y": 86,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 82,
         "influence": 0,
@@ -1915,7 +1958,7 @@
         }
       },
       "needs": {
-        "food": 62,
+        "food": 57,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1938,9 +1981,9 @@
       "gender": "male",
       "x": 51,
       "y": 77,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 17,
+        "wealth": 12,
         "influence": 4,
         "reputation": 0,
         "happiness": 77,
@@ -1955,7 +1998,7 @@
         }
       },
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -1978,7 +2021,7 @@
       "gender": "female",
       "x": 55,
       "y": 74,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 15,
         "influence": 3,
@@ -2005,7 +2048,7 @@
         }
       },
       "needs": {
-        "food": 58,
+        "food": 53,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2027,8 +2070,8 @@
       "isAlive": true,
       "gender": "male",
       "x": 46,
-      "y": 75,
-      "state": "sleeping",
+      "y": 76,
+      "state": "moving",
       "stats": {
         "wealth": 57,
         "influence": 7,
@@ -2050,7 +2093,7 @@
         }
       },
       "needs": {
-        "food": 51,
+        "food": 46,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2062,7 +2105,9 @@
         "hairColor": "#000000",
         "height": 1.1461027041797094,
         "bodyType": "average"
-      }
+      },
+      "targetX": 48,
+      "targetY": 80
     },
     "66640e95-cea2-4dd6-b5af-ef4ae26ae5d7": {
       "id": "66640e95-cea2-4dd6-b5af-ef4ae26ae5d7",
@@ -2073,9 +2118,9 @@
       "gender": "female",
       "x": 52,
       "y": 74,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 2083,
+        "wealth": 2063,
         "influence": 5,
         "reputation": 0,
         "happiness": 36,
@@ -2090,7 +2135,7 @@
         }
       },
       "needs": {
-        "food": 64,
+        "food": 59,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2114,7 +2159,7 @@
       "gender": "male",
       "x": 42,
       "y": 78,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 33,
         "influence": 7,
@@ -2131,7 +2176,7 @@
         }
       },
       "needs": {
-        "food": 59,
+        "food": 54,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2154,7 +2199,7 @@
       "gender": "female",
       "x": 42,
       "y": 80,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 11,
         "influence": 0,
@@ -2165,7 +2210,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 63,
+        "food": 58,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2188,9 +2233,9 @@
       "gender": "male",
       "x": 56,
       "y": 78,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 30,
+        "wealth": 25,
         "influence": 7,
         "reputation": 0,
         "happiness": 85,
@@ -2215,7 +2260,7 @@
         }
       },
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2238,7 +2283,7 @@
       "gender": "female",
       "x": 49,
       "y": 84,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 59,
         "influence": 4,
@@ -2255,7 +2300,7 @@
         }
       },
       "needs": {
-        "food": 52,
+        "food": 47,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2278,7 +2323,7 @@
       "gender": "male",
       "x": 51,
       "y": 78,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 27,
         "influence": 5,
@@ -2295,7 +2340,7 @@
         }
       },
       "needs": {
-        "food": 57,
+        "food": 52,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2318,7 +2363,7 @@
       "gender": "female",
       "x": 55,
       "y": 74,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 19,
         "influence": 0,
@@ -2350,7 +2395,7 @@
         }
       },
       "needs": {
-        "food": 59,
+        "food": 54,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2373,9 +2418,9 @@
       "gender": "male",
       "x": 51,
       "y": 84,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 973,
+        "wealth": 953,
         "influence": 3,
         "reputation": 0,
         "happiness": 98,
@@ -2400,7 +2445,7 @@
         }
       },
       "needs": {
-        "food": 54,
+        "food": 49,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2424,9 +2469,9 @@
       "gender": "female",
       "x": 57,
       "y": 72,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 77,
+        "wealth": 72,
         "influence": 5,
         "reputation": 0,
         "happiness": 86,
@@ -2435,7 +2480,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 46,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2458,7 +2503,7 @@
       "gender": "male",
       "x": 42,
       "y": 79,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
         "wealth": 29,
         "influence": 5,
@@ -2469,7 +2514,7 @@
       },
       "relationships": {},
       "needs": {
-        "food": 53,
+        "food": 48,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -2492,9 +2537,9 @@
       "gender": "female",
       "x": 52,
       "y": 86,
-      "state": "sleeping",
+      "state": "idle",
       "stats": {
-        "wealth": 39,
+        "wealth": 34,
         "influence": 2,
         "reputation": 0,
         "happiness": 93,
@@ -2509,7 +2554,7 @@
         }
       },
       "needs": {
-        "food": 47,
+        "food": 95,
         "safety": 100,
         "social": 80,
         "rest": 100
@@ -52930,8 +52975,8 @@
   "institutions": {},
   "time": {
     "year": 1,
-    "week": 4,
-    "isNight": true
+    "week": 5,
+    "isNight": false
   },
   "weather": "rain",
   "events": [
@@ -53541,7 +53586,7 @@
     }
   ],
   "lists": {
-    "govtFunds": 2232,
+    "govtFunds": 2243,
     "taxRate": 0.1
   }
 }
