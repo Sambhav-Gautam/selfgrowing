@@ -19,7 +19,7 @@ export const useStore = create<GameStore>((set, get) => {
     const world = new World();
 
     // Attempt to load from JSON
-    fetch('/data/world.json')
+    fetch(import.meta.env.BASE_URL + 'data/world.json')
         .then(res => {
             if (res.ok) return res.json();
             throw new Error('No saved state');
