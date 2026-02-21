@@ -1,6 +1,6 @@
 # Self Growing World Simulation
 
-![Screenshot](assets/screenshot1.webp)
+![Screenshot](assets/screenshot1.png)
 
 > 🎮 **[Live Demo: Play the Simulation](https://sambhav-gautam.github.io/selfgrowing/)**
 
@@ -21,7 +21,7 @@ You can copy and paste the following text into the **About** section of your Git
 - **Stunning Render Pipeline**: Powered by React Three Fiber with bloom post-processing, soft shadows, and a beautiful UI glassmorphism HUD.
 - **Persistent State**: History is saved to JSON and committed back to the repo automatically via GitHub Actions.
 
-![Time Passing](assets/screenshot2.webp)
+![Time Passing](assets/screenshot2.png)
 
 ## 🛠️ Setup & Local Development
 
