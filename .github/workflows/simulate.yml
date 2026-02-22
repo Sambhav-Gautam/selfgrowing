@@ -37,4 +37,8 @@ jobs:
   deploy:
     needs: simulate
     uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     secrets: inherit
