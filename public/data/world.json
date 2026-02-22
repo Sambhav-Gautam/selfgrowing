@@ -43,7 +43,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 83,
-      "y": 34,
+      "y": 30,
       "state": "moving",
       "stats": {
         "wealth": 78,
@@ -115,8 +115,8 @@
       "isAlive": true,
       "gender": "female",
       "x": 78,
-      "y": 39,
-      "state": "moving",
+      "y": 36,
+      "state": "idle",
       "stats": {
         "wealth": 206,
         "influence": 7,
@@ -140,9 +140,7 @@
         "height": 0.9874668123902204,
         "bodyType": "average"
       },
-      "residenceId": "a5877eb8-e77b-4109-bd88-91952a89550c",
-      "targetX": 78,
-      "targetY": 36
+      "residenceId": "a5877eb8-e77b-4109-bd88-91952a89550c"
     },
     "19d53019-e034-4360-91d9-294539e51418": {
       "id": "19d53019-e034-4360-91d9-294539e51418",
@@ -152,7 +150,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 70,
-      "y": 48,
+      "y": 44,
       "state": "moving",
       "stats": {
         "wealth": 232,
@@ -258,9 +256,9 @@
       "yearBorn": -13,
       "isAlive": true,
       "gender": "female",
-      "x": 77,
-      "y": 57,
-      "state": "idle",
+      "x": 73,
+      "y": 61,
+      "state": "moving",
       "stats": {
         "wealth": 9077,
         "influence": 8,
@@ -284,7 +282,9 @@
         "height": 0.9398386819826553,
         "bodyType": "thin"
       },
-      "residenceId": "31d26aa9-10e1-4b11-96db-00657569ab26"
+      "residenceId": "31d26aa9-10e1-4b11-96db-00657569ab26",
+      "targetX": 69,
+      "targetY": 65
     },
     "8cd231ca-a6cd-40b8-9e8c-1d4be670ff9c": {
       "id": "8cd231ca-a6cd-40b8-9e8c-1d4be670ff9c",
@@ -328,9 +328,9 @@
       "yearBorn": -16,
       "isAlive": true,
       "gender": "female",
-      "x": 77,
-      "y": 62,
-      "state": "idle",
+      "x": 73,
+      "y": 66,
+      "state": "moving",
       "stats": {
         "wealth": 220,
         "influence": 8,
@@ -354,7 +354,9 @@
         "height": 1.2615572655446732,
         "bodyType": "thin"
       },
-      "residenceId": "90e4b410-30b3-422b-aeff-2558040f5ae8"
+      "residenceId": "90e4b410-30b3-422b-aeff-2558040f5ae8",
+      "targetX": 73,
+      "targetY": 69
     },
     "4c614bd1-f216-4fa1-a888-b57f3bc10065": {
       "id": "4c614bd1-f216-4fa1-a888-b57f3bc10065",
@@ -363,8 +365,8 @@
       "yearBorn": -57,
       "isAlive": true,
       "gender": "male",
-      "x": 68,
-      "y": 63,
+      "x": 64,
+      "y": 62,
       "state": "moving",
       "stats": {
         "wealth": 173,
@@ -470,9 +472,9 @@
       "yearBorn": -54,
       "isAlive": true,
       "gender": "female",
-      "x": 77,
-      "y": 72,
-      "state": "idle",
+      "x": 81,
+      "y": 68,
+      "state": "moving",
       "stats": {
         "wealth": 179,
         "influence": 7,
@@ -496,7 +498,9 @@
         "height": 1.0497620769366893,
         "bodyType": "average"
       },
-      "residenceId": "9279564f-5b90-4f9d-8915-bca70e361c80"
+      "residenceId": "9279564f-5b90-4f9d-8915-bca70e361c80",
+      "targetX": 86,
+      "targetY": 67
     },
     "660fe172-7ac7-4dd6-a4e7-b65a889da05d": {
       "id": "660fe172-7ac7-4dd6-a4e7-b65a889da05d",
@@ -506,7 +510,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 80,
-      "y": 69,
+      "y": 65,
       "state": "moving",
       "stats": {
         "wealth": 66,
@@ -683,7 +687,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 78,
-      "y": 91,
+      "y": 95,
       "state": "moving",
       "stats": {
         "wealth": 235,
@@ -754,9 +758,9 @@
       "yearBorn": -54,
       "isAlive": true,
       "gender": "female",
-      "x": 77,
-      "y": 92,
-      "state": "idle",
+      "x": 81,
+      "y": 88,
+      "state": "moving",
       "stats": {
         "wealth": 106,
         "influence": 3,
@@ -780,7 +784,9 @@
         "height": 1.116285535500742,
         "bodyType": "average"
       },
-      "residenceId": "8dc03282-eb63-4f72-a272-bb38fb57ca54"
+      "residenceId": "8dc03282-eb63-4f72-a272-bb38fb57ca54",
+      "targetX": 95,
+      "targetY": 82
     },
     "f5a1a8eb-5305-4dfd-8a0d-0509c089029f": {
       "id": "f5a1a8eb-5305-4dfd-8a0d-0509c089029f",
@@ -859,8 +865,8 @@
       "yearBorn": -24,
       "isAlive": true,
       "gender": "male",
-      "x": 73,
-      "y": 98,
+      "x": 74,
+      "y": 95,
       "state": "idle",
       "stats": {
         "wealth": 71,
@@ -929,9 +935,9 @@
       "yearBorn": -34,
       "isAlive": true,
       "gender": "male",
-      "x": 69,
-      "y": 114,
-      "state": "idle",
+      "x": 66,
+      "y": 110,
+      "state": "moving",
       "stats": {
         "wealth": 111,
         "influence": 1,
@@ -955,7 +961,9 @@
         "height": 1.1186190882528464,
         "bodyType": "stocky"
       },
-      "residenceId": "1d11f65a-1262-4103-beca-798d0ed1d4b9"
+      "residenceId": "1d11f65a-1262-4103-beca-798d0ed1d4b9",
+      "targetX": 66,
+      "targetY": 95
     },
     "4355aea7-d95d-4a0a-9c52-7aefb46c7b13": {
       "id": "4355aea7-d95d-4a0a-9c52-7aefb46c7b13",
@@ -964,8 +972,8 @@
       "yearBorn": -24,
       "isAlive": true,
       "gender": "female",
-      "x": 81,
-      "y": 103,
+      "x": 85,
+      "y": 99,
       "state": "moving",
       "stats": {
         "wealth": 9239,
@@ -1141,7 +1149,7 @@
       "yearBorn": -52,
       "isAlive": true,
       "gender": "male",
-      "x": 76,
+      "x": 80,
       "y": 118,
       "state": "moving",
       "stats": {
@@ -1248,9 +1256,9 @@
       "yearBorn": -49,
       "isAlive": true,
       "gender": "female",
-      "x": 77,
-      "y": 127,
-      "state": "idle",
+      "x": 81,
+      "y": 129,
+      "state": "moving",
       "stats": {
         "wealth": 170,
         "influence": 8,
@@ -1274,7 +1282,9 @@
         "height": 1.0483941108254622,
         "bodyType": "average"
       },
-      "residenceId": "cd0c9d32-8c8e-4837-b2e7-d58660f90964"
+      "residenceId": "cd0c9d32-8c8e-4837-b2e7-d58660f90964",
+      "targetX": 89,
+      "targetY": 129
     },
     "d29e9a11-0817-41fd-9cd9-628923ed98a4": {
       "id": "d29e9a11-0817-41fd-9cd9-628923ed98a4",
@@ -1318,8 +1328,8 @@
       "yearBorn": -20,
       "isAlive": true,
       "gender": "female",
-      "x": 73,
-      "y": 128,
+      "x": 69,
+      "y": 126,
       "state": "moving",
       "stats": {
         "wealth": 169,
@@ -1356,7 +1366,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 65,
-      "y": 145,
+      "y": 149,
       "state": "moving",
       "stats": {
         "wealth": 58,
@@ -1427,9 +1437,9 @@
       "yearBorn": -52,
       "isAlive": true,
       "gender": "male",
-      "x": 72,
-      "y": 142,
-      "state": "idle",
+      "x": 68,
+      "y": 140,
+      "state": "moving",
       "stats": {
         "wealth": 7661,
         "influence": 0,
@@ -1453,7 +1463,9 @@
         "height": 0.9386898041261083,
         "bodyType": "average"
       },
-      "residenceId": "61ddc24d-7f18-4e5e-a49e-406d4de22a7f"
+      "residenceId": "61ddc24d-7f18-4e5e-a49e-406d4de22a7f",
+      "targetX": 59,
+      "targetY": 140
     },
     "25e342bf-84f2-451a-a772-1721f6c1f41e": {
       "id": "25e342bf-84f2-451a-a772-1721f6c1f41e",
@@ -1567,8 +1579,8 @@
       "yearBorn": -41,
       "isAlive": true,
       "gender": "male",
-      "x": 90,
-      "y": 34,
+      "x": 94,
+      "y": 32,
       "state": "moving",
       "stats": {
         "wealth": 227,
@@ -1640,8 +1652,8 @@
       "isAlive": true,
       "gender": "male",
       "x": 82,
-      "y": 47,
-      "state": "idle",
+      "y": 51,
+      "state": "moving",
       "stats": {
         "wealth": 140,
         "influence": 5,
@@ -1665,7 +1677,9 @@
         "height": 1.2560230575235445,
         "bodyType": "average"
       },
-      "residenceId": "fab12d7d-d0c1-4123-a965-86a13fb62fc7"
+      "residenceId": "fab12d7d-d0c1-4123-a965-86a13fb62fc7",
+      "targetX": 82,
+      "targetY": 67
     },
     "d18cdbe8-1473-4bd3-b22b-168cf9de588d": {
       "id": "d18cdbe8-1473-4bd3-b22b-168cf9de588d",
@@ -1675,7 +1689,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 83,
-      "y": 49,
+      "y": 45,
       "state": "moving",
       "stats": {
         "wealth": 243,
@@ -1701,8 +1715,8 @@
         "bodyType": "average"
       },
       "residenceId": "61d8101d-2bde-49f8-9270-35bc3d8f5ef9",
-      "targetX": 80,
-      "targetY": 49
+      "targetX": 83,
+      "targetY": 37
     },
     "630ee1d8-117c-4e36-8f61-a737672913b8": {
       "id": "630ee1d8-117c-4e36-8f61-a737672913b8",
@@ -1817,7 +1831,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 80,
-      "y": 65,
+      "y": 69,
       "state": "moving",
       "stats": {
         "wealth": 225,
@@ -1853,8 +1867,8 @@
       "yearBorn": -39,
       "isAlive": true,
       "gender": "male",
-      "x": 74,
-      "y": 70,
+      "x": 70,
+      "y": 74,
       "state": "moving",
       "stats": {
         "wealth": 128,
@@ -1890,9 +1904,9 @@
       "yearBorn": -29,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 62,
-      "state": "idle",
+      "x": 91,
+      "y": 60,
+      "state": "moving",
       "stats": {
         "wealth": 95,
         "influence": 3,
@@ -1916,7 +1930,9 @@
         "height": 1.2605949995062011,
         "bodyType": "thin"
       },
-      "residenceId": "dff40f17-ad4d-4775-ae6d-9c9710ea686d"
+      "residenceId": "dff40f17-ad4d-4775-ae6d-9c9710ea686d",
+      "targetX": 103,
+      "targetY": 60
     },
     "77eb36ef-174e-4b84-9194-5fabc18bebdf": {
       "id": "77eb36ef-174e-4b84-9194-5fabc18bebdf",
@@ -1960,9 +1976,9 @@
       "yearBorn": -31,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 67,
-      "state": "idle",
+      "x": 91,
+      "y": 71,
+      "state": "moving",
       "stats": {
         "wealth": 230,
         "influence": 2,
@@ -1986,7 +2002,9 @@
         "height": 1.2986085957128544,
         "bodyType": "stocky"
       },
-      "residenceId": "adf55ed9-7531-4c8f-ad99-d1d0d12548a4"
+      "residenceId": "adf55ed9-7531-4c8f-ad99-d1d0d12548a4",
+      "targetX": 105,
+      "targetY": 77
     },
     "dd717cad-55c9-455e-a703-9278b84afcbe": {
       "id": "dd717cad-55c9-455e-a703-9278b84afcbe",
@@ -1995,8 +2013,8 @@
       "yearBorn": -54,
       "isAlive": true,
       "gender": "male",
-      "x": 78,
-      "y": 68,
+      "x": 74,
+      "y": 64,
       "state": "moving",
       "stats": {
         "wealth": 58,
@@ -2022,8 +2040,8 @@
         "bodyType": "average"
       },
       "residenceId": "da525936-53b6-4b19-b1f9-fb67c88fcffc",
-      "targetX": 67,
-      "targetY": 64
+      "targetX": 68,
+      "targetY": 55
     },
     "99cb14be-a6f9-4074-927e-251cbf31c198": {
       "id": "99cb14be-a6f9-4074-927e-251cbf31c198",
@@ -2067,9 +2085,9 @@
       "yearBorn": -50,
       "isAlive": true,
       "gender": "male",
-      "x": 82,
-      "y": 77,
-      "state": "idle",
+      "x": 78,
+      "y": 73,
+      "state": "moving",
       "stats": {
         "wealth": 222,
         "influence": 2,
@@ -2093,7 +2111,9 @@
         "height": 0.900630737846183,
         "bodyType": "stocky"
       },
-      "residenceId": "b08e4644-3312-4165-8250-07b2b955057f"
+      "residenceId": "b08e4644-3312-4165-8250-07b2b955057f",
+      "targetX": 77,
+      "targetY": 71
     },
     "6c899841-2b04-4c7e-8663-3a208d36e6e9": {
       "id": "6c899841-2b04-4c7e-8663-3a208d36e6e9",
@@ -2312,8 +2332,8 @@
       "yearBorn": -28,
       "isAlive": true,
       "gender": "female",
-      "x": 89,
-      "y": 88,
+      "x": 93,
+      "y": 92,
       "state": "moving",
       "stats": {
         "wealth": 206,
@@ -2339,8 +2359,8 @@
         "bodyType": "stocky"
       },
       "residenceId": "4a4728f8-a024-445b-828c-f91fcbeae875",
-      "targetX": 89,
-      "targetY": 76
+      "targetX": 95,
+      "targetY": 98
     },
     "008d95a5-26d2-452f-953d-101249f7c1ca": {
       "id": "008d95a5-26d2-452f-953d-101249f7c1ca",
@@ -2349,8 +2369,8 @@
       "yearBorn": -40,
       "isAlive": true,
       "gender": "male",
-      "x": 86,
-      "y": 101,
+      "x": 90,
+      "y": 105,
       "state": "moving",
       "stats": {
         "wealth": 81,
@@ -2421,9 +2441,9 @@
       "yearBorn": -28,
       "isAlive": true,
       "gender": "male",
-      "x": 82,
-      "y": 102,
-      "state": "idle",
+      "x": 78,
+      "y": 98,
+      "state": "moving",
       "stats": {
         "wealth": 163,
         "influence": 4,
@@ -2447,7 +2467,9 @@
         "height": 0.9194102664102084,
         "bodyType": "average"
       },
-      "residenceId": "6773364f-9cdb-4768-a3e4-9a23b1239b63"
+      "residenceId": "6773364f-9cdb-4768-a3e4-9a23b1239b63",
+      "targetX": 68,
+      "targetY": 92
     },
     "96f83a3a-0de9-419b-a8ce-c411ec2eb304": {
       "id": "96f83a3a-0de9-419b-a8ce-c411ec2eb304",
@@ -2526,9 +2548,9 @@
       "yearBorn": -35,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 107,
-      "state": "idle",
+      "x": 91,
+      "y": 111,
+      "state": "moving",
       "stats": {
         "wealth": 152,
         "influence": 3,
@@ -2552,7 +2574,9 @@
         "height": 1.177874542626338,
         "bodyType": "average"
       },
-      "residenceId": "74d7e938-052c-4408-acd3-6a8de0f71757"
+      "residenceId": "74d7e938-052c-4408-acd3-6a8de0f71757",
+      "targetX": 107,
+      "targetY": 118
     },
     "40ad3bc5-f064-4707-9018-a64efa3a9e35": {
       "id": "40ad3bc5-f064-4707-9018-a64efa3a9e35",
@@ -2561,9 +2585,9 @@
       "yearBorn": -19,
       "isAlive": true,
       "gender": "male",
-      "x": 82,
-      "y": 112,
-      "state": "idle",
+      "x": 78,
+      "y": 116,
+      "state": "moving",
       "stats": {
         "wealth": 180,
         "influence": 8,
@@ -2587,7 +2611,9 @@
         "height": 1.0771334377729285,
         "bodyType": "stocky"
       },
-      "residenceId": "388fb91a-72f4-4bcc-a0a3-8a4a7bc04169"
+      "residenceId": "388fb91a-72f4-4bcc-a0a3-8a4a7bc04169",
+      "targetX": 66,
+      "targetY": 125
     },
     "ac8088eb-33fd-454c-b4d6-1b9722695f88": {
       "id": "ac8088eb-33fd-454c-b4d6-1b9722695f88",
@@ -2666,7 +2692,7 @@
       "yearBorn": -35,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
+      "x": 83,
       "y": 112,
       "state": "moving",
       "stats": {
@@ -2738,9 +2764,9 @@
       "yearBorn": -18,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 122,
-      "state": "idle",
+      "x": 91,
+      "y": 118,
+      "state": "moving",
       "stats": {
         "wealth": 233,
         "influence": 6,
@@ -2764,7 +2790,9 @@
         "height": 1.2848549420867914,
         "bodyType": "thin"
       },
-      "residenceId": "d05affe7-bdbf-4600-b635-6401ccc840a3"
+      "residenceId": "d05affe7-bdbf-4600-b635-6401ccc840a3",
+      "targetX": 101,
+      "targetY": 118
     },
     "63cf533a-700e-4a5a-b74b-12083b2be1ff": {
       "id": "63cf533a-700e-4a5a-b74b-12083b2be1ff",
@@ -2808,9 +2836,9 @@
       "yearBorn": -54,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 127,
-      "state": "idle",
+      "x": 91,
+      "y": 123,
+      "state": "moving",
       "stats": {
         "wealth": 80,
         "influence": 9,
@@ -2834,7 +2862,9 @@
         "height": 0.9521691745926333,
         "bodyType": "average"
       },
-      "residenceId": "5aad0e7a-ee16-4eee-aa9c-282919ab1361"
+      "residenceId": "5aad0e7a-ee16-4eee-aa9c-282919ab1361",
+      "targetX": 101,
+      "targetY": 115
     },
     "34a53f89-e2d2-4e16-8025-2b2c9cdce4ee": {
       "id": "34a53f89-e2d2-4e16-8025-2b2c9cdce4ee",
@@ -2843,8 +2873,8 @@
       "yearBorn": -56,
       "isAlive": true,
       "gender": "male",
-      "x": 74,
-      "y": 124,
+      "x": 71,
+      "y": 120,
       "state": "moving",
       "stats": {
         "wealth": 230,
@@ -2915,9 +2945,9 @@
       "yearBorn": -46,
       "isAlive": true,
       "gender": "male",
-      "x": 82,
-      "y": 137,
-      "state": "idle",
+      "x": 86,
+      "y": 133,
+      "state": "moving",
       "stats": {
         "wealth": 249,
         "influence": 4,
@@ -2941,7 +2971,9 @@
         "height": 0.975226884563903,
         "bodyType": "average"
       },
-      "residenceId": "db5b2a7f-3017-41b9-98c5-140ce242431b"
+      "residenceId": "db5b2a7f-3017-41b9-98c5-140ce242431b",
+      "targetX": 93,
+      "targetY": 131
     },
     "37a98e6b-935e-44af-9899-99951d5428bb": {
       "id": "37a98e6b-935e-44af-9899-99951d5428bb",
@@ -2950,7 +2982,7 @@
       "yearBorn": -46,
       "isAlive": true,
       "gender": "female",
-      "x": 83,
+      "x": 79,
       "y": 139,
       "state": "moving",
       "stats": {
@@ -2987,8 +3019,8 @@
       "yearBorn": -27,
       "isAlive": true,
       "gender": "male",
-      "x": 82,
-      "y": 142,
+      "x": 86,
+      "y": 146,
       "state": "moving",
       "stats": {
         "wealth": 207,
@@ -3014,8 +3046,8 @@
         "bodyType": "thin"
       },
       "residenceId": "10c0e4ed-1acc-41d0-8925-0a3f988515f3",
-      "targetX": 95,
-      "targetY": 142
+      "targetX": 88,
+      "targetY": 152
     },
     "65e5b3b9-0bcf-4556-b15a-56d2ffa5032d": {
       "id": "65e5b3b9-0bcf-4556-b15a-56d2ffa5032d",
@@ -3024,9 +3056,9 @@
       "yearBorn": -58,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 142,
-      "state": "idle",
+      "x": 83,
+      "y": 138,
+      "state": "moving",
       "stats": {
         "wealth": 234,
         "influence": 7,
@@ -3050,7 +3082,9 @@
         "height": 1.1452128954365233,
         "bodyType": "stocky"
       },
-      "residenceId": "00a494e7-4cc7-4328-8e43-959de17c45bb"
+      "residenceId": "00a494e7-4cc7-4328-8e43-959de17c45bb",
+      "targetX": 79,
+      "targetY": 133
     },
     "41d45cec-10fe-4b85-9e2a-e446d5417f8a": {
       "id": "41d45cec-10fe-4b85-9e2a-e446d5417f8a",
@@ -3164,9 +3198,9 @@
       "yearBorn": -33,
       "isAlive": true,
       "gender": "female",
-      "x": 87,
-      "y": 152,
-      "state": "idle",
+      "x": 89,
+      "y": 148,
+      "state": "moving",
       "stats": {
         "wealth": 8485,
         "influence": 9,
@@ -3190,7 +3224,9 @@
         "height": 0.9768394824580563,
         "bodyType": "thin"
       },
-      "residenceId": "d5a9c7e5-176b-4a68-b1ca-c7f4bf5547da"
+      "residenceId": "d5a9c7e5-176b-4a68-b1ca-c7f4bf5547da",
+      "targetX": 89,
+      "targetY": 143
     },
     "fed84f8f-486c-473a-91c3-a8f21cf6681c": {
       "id": "fed84f8f-486c-473a-91c3-a8f21cf6681c",
@@ -3234,8 +3270,8 @@
       "yearBorn": -32,
       "isAlive": true,
       "gender": "female",
-      "x": 95,
-      "y": 165,
+      "x": 99,
+      "y": 169,
       "state": "moving",
       "stats": {
         "wealth": 91,
@@ -3306,9 +3342,9 @@
       "yearBorn": -10,
       "isAlive": true,
       "gender": "female",
-      "x": 90,
-      "y": 158,
-      "state": "moving",
+      "x": 89,
+      "y": 161,
+      "state": "idle",
       "stats": {
         "wealth": 217,
         "influence": 3,
@@ -3332,9 +3368,7 @@
         "height": 0.9385059949439055,
         "bodyType": "stocky"
       },
-      "residenceId": "09284ac2-c07d-4a17-93a1-75525261a5ec",
-      "targetX": 90,
-      "targetY": 145
+      "residenceId": "09284ac2-c07d-4a17-93a1-75525261a5ec"
     },
     "41013343-b63b-400d-9e30-3345162e92d2": {
       "id": "41013343-b63b-400d-9e30-3345162e92d2",
@@ -3343,8 +3377,8 @@
       "yearBorn": -21,
       "isAlive": true,
       "gender": "male",
-      "x": 74,
-      "y": 159,
+      "x": 70,
+      "y": 155,
       "state": "moving",
       "stats": {
         "wealth": 245,
@@ -3380,8 +3414,8 @@
       "yearBorn": -47,
       "isAlive": true,
       "gender": "female",
-      "x": 95,
-      "y": 175,
+      "x": 91,
+      "y": 179,
       "state": "moving",
       "stats": {
         "wealth": 53,
@@ -3407,8 +3441,8 @@
         "bodyType": "average"
       },
       "residenceId": "c8027cbf-353a-427f-856c-579f33695f47",
-      "targetX": 99,
-      "targetY": 187
+      "targetX": 75,
+      "targetY": 186
     },
     "e5fa05e4-650a-4a21-a2f1-4d928818a9b2": {
       "id": "e5fa05e4-650a-4a21-a2f1-4d928818a9b2",
@@ -3557,9 +3591,9 @@
       "yearBorn": -36,
       "isAlive": true,
       "gender": "male",
-      "x": 92,
-      "y": 52,
-      "state": "idle",
+      "x": 88,
+      "y": 56,
+      "state": "moving",
       "stats": {
         "wealth": 159,
         "influence": 4,
@@ -3583,7 +3617,9 @@
         "height": 0.9049882334917535,
         "bodyType": "average"
       },
-      "residenceId": "96bad188-ea7d-43bf-a110-2e9e15869533"
+      "residenceId": "96bad188-ea7d-43bf-a110-2e9e15869533",
+      "targetX": 77,
+      "targetY": 60
     },
     "68adc5ea-e3c3-47ff-a5da-09f2ed9fe850": {
       "id": "68adc5ea-e3c3-47ff-a5da-09f2ed9fe850",
@@ -3627,9 +3663,9 @@
       "yearBorn": -26,
       "isAlive": true,
       "gender": "male",
-      "x": 92,
-      "y": 57,
-      "state": "idle",
+      "x": 88,
+      "y": 53,
+      "state": "moving",
       "stats": {
         "wealth": 56,
         "influence": 9,
@@ -3653,7 +3689,9 @@
         "height": 1.0750812310801992,
         "bodyType": "average"
       },
-      "residenceId": "39620234-a6c9-4496-8591-e0e1b88e5084"
+      "residenceId": "39620234-a6c9-4496-8591-e0e1b88e5084",
+      "targetX": 79,
+      "targetY": 40
     },
     "d579527b-f8d7-41fd-b887-6e7a05fe41fa": {
       "id": "d579527b-f8d7-41fd-b887-6e7a05fe41fa",
@@ -3732,7 +3770,7 @@
       "yearBorn": -16,
       "isAlive": true,
       "gender": "female",
-      "x": 101,
+      "x": 105,
       "y": 66,
       "state": "moving",
       "stats": {
@@ -3769,8 +3807,8 @@
       "yearBorn": -38,
       "isAlive": true,
       "gender": "male",
-      "x": 100,
-      "y": 59,
+      "x": 104,
+      "y": 55,
       "state": "moving",
       "stats": {
         "wealth": 110,
@@ -3842,7 +3880,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 86,
-      "y": 80,
+      "y": 84,
       "state": "moving",
       "stats": {
         "wealth": 218,
@@ -3983,8 +4021,8 @@
       "yearBorn": -39,
       "isAlive": true,
       "gender": "male",
-      "x": 84,
-      "y": 90,
+      "x": 80,
+      "y": 92,
       "state": "moving",
       "stats": {
         "wealth": 7122,
@@ -4010,8 +4048,8 @@
         "bodyType": "average"
       },
       "residenceId": "3ed2755c-3f4d-4df1-8273-ace66925e6a6",
-      "targetX": 80,
-      "targetY": 93
+      "targetX": 68,
+      "targetY": 92
     },
     "58a5e8c3-58e7-4bac-a548-0dd67389a4ae": {
       "id": "58a5e8c3-58e7-4bac-a548-0dd67389a4ae",
@@ -4020,8 +4058,8 @@
       "yearBorn": -24,
       "isAlive": true,
       "gender": "female",
-      "x": 97,
-      "y": 82,
+      "x": 98,
+      "y": 80,
       "state": "idle",
       "stats": {
         "wealth": 197,
@@ -4055,8 +4093,8 @@
       "yearBorn": -24,
       "isAlive": true,
       "gender": "male",
-      "x": 88,
-      "y": 91,
+      "x": 84,
+      "y": 95,
       "state": "moving",
       "stats": {
         "wealth": 193,
@@ -4092,9 +4130,9 @@
       "yearBorn": -9,
       "isAlive": true,
       "gender": "female",
-      "x": 97,
-      "y": 87,
-      "state": "idle",
+      "x": 101,
+      "y": 88,
+      "state": "moving",
       "stats": {
         "wealth": 8509,
         "influence": 7,
@@ -4118,7 +4156,9 @@
         "height": 1.0441826251755861,
         "bodyType": "average"
       },
-      "residenceId": "3f1ccdd6-c528-4c24-b084-86ef40177d00"
+      "residenceId": "3f1ccdd6-c528-4c24-b084-86ef40177d00",
+      "targetX": 109,
+      "targetY": 88
     },
     "9f8ab723-298b-4a48-bd29-f655e565d6a9": {
       "id": "9f8ab723-298b-4a48-bd29-f655e565d6a9",
@@ -4127,9 +4167,9 @@
       "yearBorn": -42,
       "isAlive": true,
       "gender": "male",
-      "x": 100,
+      "x": 103,
       "y": 100,
-      "state": "moving",
+      "state": "idle",
       "stats": {
         "wealth": 5115,
         "influence": 3,
@@ -4153,9 +4193,7 @@
         "height": 1.1137245741289985,
         "bodyType": "average"
       },
-      "residenceId": "a45ca2d8-e9db-4c3e-870c-02c5956f7075",
-      "targetX": 103,
-      "targetY": 100
+      "residenceId": "a45ca2d8-e9db-4c3e-870c-02c5956f7075"
     },
     "ea547fad-74c3-41c9-8363-5f459f8abc94": {
       "id": "ea547fad-74c3-41c9-8363-5f459f8abc94",
@@ -4304,8 +4342,8 @@
       "yearBorn": -22,
       "isAlive": true,
       "gender": "female",
-      "x": 101,
-      "y": 106,
+      "x": 105,
+      "y": 110,
       "state": "moving",
       "stats": {
         "wealth": 51,
@@ -4411,9 +4449,9 @@
       "yearBorn": -29,
       "isAlive": true,
       "gender": "male",
-      "x": 92,
-      "y": 112,
-      "state": "idle",
+      "x": 89,
+      "y": 116,
+      "state": "moving",
       "stats": {
         "wealth": 165,
         "influence": 8,
@@ -4437,7 +4475,9 @@
         "height": 0.9356831391289191,
         "bodyType": "stocky"
       },
-      "residenceId": "24bd93bf-9616-439d-afa1-eace2e242f7c"
+      "residenceId": "24bd93bf-9616-439d-afa1-eace2e242f7c",
+      "targetX": 89,
+      "targetY": 125
     },
     "ee2699b9-7a37-4fa4-88d8-d5457872b46f": {
       "id": "ee2699b9-7a37-4fa4-88d8-d5457872b46f",
@@ -4517,7 +4557,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 90,
-      "y": 109,
+      "y": 105,
       "state": "moving",
       "stats": {
         "wealth": 5110,
@@ -4623,8 +4663,8 @@
       "yearBorn": -14,
       "isAlive": true,
       "gender": "male",
-      "x": 84,
-      "y": 135,
+      "x": 80,
+      "y": 139,
       "state": "moving",
       "stats": {
         "wealth": 5634,
@@ -4765,8 +4805,8 @@
       "yearBorn": -23,
       "isAlive": true,
       "gender": "male",
-      "x": 84,
-      "y": 145,
+      "x": 80,
+      "y": 149,
       "state": "moving",
       "stats": {
         "wealth": 242,
@@ -4837,8 +4877,8 @@
       "yearBorn": -27,
       "isAlive": true,
       "gender": "male",
-      "x": 100,
-      "y": 134,
+      "x": 104,
+      "y": 130,
       "state": "moving",
       "stats": {
         "wealth": 161,
@@ -4874,9 +4914,9 @@
       "yearBorn": -48,
       "isAlive": true,
       "gender": "female",
-      "x": 106,
-      "y": 76,
-      "state": "moving",
+      "x": 109,
+      "y": 77,
+      "state": "idle",
       "stats": {
         "wealth": 9322,
         "influence": 4,
@@ -4900,9 +4940,7 @@
         "height": 0.9904036014271211,
         "bodyType": "average"
       },
-      "residenceId": "32003e66-f1ad-4129-93a4-4e3190713404",
-      "targetX": 109,
-      "targetY": 77
+      "residenceId": "32003e66-f1ad-4129-93a4-4e3190713404"
     },
     "fcd7f485-e2d3-49db-9559-98d0d79616d6": {
       "id": "fcd7f485-e2d3-49db-9559-98d0d79616d6",
@@ -5087,8 +5125,8 @@
       "isAlive": true,
       "gender": "female",
       "x": 101,
-      "y": 149,
-      "state": "moving",
+      "y": 146,
+      "state": "idle",
       "stats": {
         "wealth": 246,
         "influence": 6,
@@ -5112,9 +5150,7 @@
         "height": 1.1103039949700269,
         "bodyType": "average"
       },
-      "residenceId": "844a2d47-9989-480b-b8de-6bd054fd5a93",
-      "targetX": 101,
-      "targetY": 146
+      "residenceId": "844a2d47-9989-480b-b8de-6bd054fd5a93"
     },
     "119f4f19-591b-4a19-9927-a3ace6fea90e": {
       "id": "119f4f19-591b-4a19-9927-a3ace6fea90e",
@@ -5123,8 +5159,8 @@
       "yearBorn": -12,
       "isAlive": true,
       "gender": "male",
-      "x": 96,
-      "y": 166,
+      "x": 100,
+      "y": 170,
       "state": "moving",
       "stats": {
         "wealth": 175,
@@ -5300,7 +5336,7 @@
       "yearBorn": -39,
       "isAlive": true,
       "gender": "female",
-      "x": 111,
+      "x": 115,
       "y": 46,
       "state": "moving",
       "stats": {
@@ -207462,7 +207498,7 @@
     "year": 1,
     "week": 1,
     "day": 1,
-    "hour": 10,
+    "hour": 11,
     "isNight": false
   },
   "weather": "clear",
