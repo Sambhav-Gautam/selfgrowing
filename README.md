@@ -6,11 +6,11 @@
   **An autonomous, self-growing miniature world simulation powered by AI and React Three Fiber.**
 
   <p align="center">
-    <a href="https://sambhav-gautam.github.io/selfgrowing/">
+    <a href="https://sambhav-gautam.github.io/selfgrowingworld/">
       <img src="https://img.shields.io/badge/Live%20Demo-Play%20Now-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Live Demo">
     </a>
-    <a href="https://github.com/Sambhav-Gautam/selfgrowing/actions">
-      <img src="https://img.shields.io/github/actions/workflow/status/Sambhav-Gautam/selfgrowing/deploy.yml?branch=main&style=for-the-badge&logo=githubactions" alt="Build Status">
+    <a href="https://github.com/Sambhav-Gautam/selfgrowingworld/actions">
+      <img src="https://img.shields.io/github/actions/workflow/status/Sambhav-Gautam/selfgrowingworld/deploy.yml?branch=main&style=for-the-badge&logo=githubactions" alt="Build Status">
     </a>
     <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
     <img src="https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=threedotjs&logoColor=white" alt="ThreeJs">
