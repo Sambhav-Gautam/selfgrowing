@@ -849,7 +849,7 @@
       "gender": "male",
       "x": 72,
       "y": 102,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 71,
         "influence": 0,
@@ -1829,7 +1829,7 @@
       "gender": "male",
       "x": 82,
       "y": 62,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 178,
         "influence": 8,
@@ -2317,7 +2317,7 @@
       "yearBorn": -40,
       "isAlive": true,
       "gender": "male",
-      "x": 86,
+      "x": 82,
       "y": 97,
       "state": "moving",
       "stats": {
@@ -2343,9 +2343,7 @@
         "height": 0.9478878050458974,
         "bodyType": "average"
       },
-      "residenceId": "322b81ca-9361-497f-8a2f-d9c11c657159",
-      "targetX": 82,
-      "targetY": 97
+      "residenceId": "322b81ca-9361-497f-8a2f-d9c11c657159"
     },
     "b26cc4a5-af30-4438-a664-fdcfc9f781af": {
       "id": "b26cc4a5-af30-4438-a664-fdcfc9f781af",
@@ -3579,7 +3577,7 @@
       "yearBorn": -26,
       "isAlive": true,
       "gender": "male",
-      "x": 91,
+      "x": 92,
       "y": 57,
       "state": "moving",
       "stats": {
@@ -3605,9 +3603,7 @@
         "height": 1.0750812310801992,
         "bodyType": "average"
       },
-      "residenceId": "39620234-a6c9-4496-8591-e0e1b88e5084",
-      "targetX": 92,
-      "targetY": 57
+      "residenceId": "39620234-a6c9-4496-8591-e0e1b88e5084"
     },
     "d579527b-f8d7-41fd-b887-6e7a05fe41fa": {
       "id": "d579527b-f8d7-41fd-b887-6e7a05fe41fa",
@@ -4575,7 +4571,7 @@
       "gender": "male",
       "x": 92,
       "y": 127,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 5634,
         "influence": 5,
@@ -4796,7 +4792,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 92,
-      "y": 140,
+      "y": 142,
       "state": "moving",
       "stats": {
         "wealth": 161,
@@ -4821,9 +4817,7 @@
         "height": 1.2247632857298067,
         "bodyType": "average"
       },
-      "residenceId": "11e90ee0-837c-4b6c-b285-0dba0c922fbb",
-      "targetX": 92,
-      "targetY": 142
+      "residenceId": "11e90ee0-837c-4b6c-b285-0dba0c922fbb"
     },
     "7b3b91da-dbff-4533-82fa-b3f1005f5d9c": {
       "id": "7b3b91da-dbff-4533-82fa-b3f1005f5d9c",
@@ -207412,7 +207406,7 @@
     "year": 1,
     "week": 1,
     "day": 2,
-    "hour": 3,
+    "hour": 4,
     "isNight": true
   },
   "weather": "clear",
