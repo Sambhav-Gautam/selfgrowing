@@ -464,7 +464,7 @@
       "gender": "female",
       "x": 77,
       "y": 72,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 179,
         "influence": 7,
@@ -847,7 +847,7 @@
       "yearBorn": -24,
       "isAlive": true,
       "gender": "male",
-      "x": 74,
+      "x": 72,
       "y": 102,
       "state": "moving",
       "stats": {
@@ -873,9 +873,7 @@
         "height": 1.0733970293990218,
         "bodyType": "average"
       },
-      "residenceId": "acfb48c8-9718-470c-b52b-9cd64d63e778",
-      "targetX": 72,
-      "targetY": 102
+      "residenceId": "acfb48c8-9718-470c-b52b-9cd64d63e778"
     },
     "5847fb67-0bdb-431f-978f-a0af76aaabdf": {
       "id": "5847fb67-0bdb-431f-978f-a0af76aaabdf",
@@ -921,7 +919,7 @@
       "gender": "male",
       "x": 72,
       "y": 107,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 111,
         "influence": 1,
@@ -1306,7 +1304,7 @@
       "gender": "female",
       "x": 77,
       "y": 132,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 169,
         "influence": 2,
@@ -1656,7 +1654,7 @@
       "gender": "female",
       "x": 87,
       "y": 47,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 243,
         "influence": 8,
@@ -1830,7 +1828,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 82,
-      "y": 63,
+      "y": 62,
       "state": "moving",
       "stats": {
         "wealth": 178,
@@ -1855,9 +1853,7 @@
         "height": 1.041870694416842,
         "bodyType": "stocky"
       },
-      "residenceId": "02c139d3-bd27-4d82-848e-e6245af20ead",
-      "targetX": 82,
-      "targetY": 62
+      "residenceId": "02c139d3-bd27-4d82-848e-e6245af20ead"
     },
     "24eead75-c060-4d7d-93c9-b7bcf037a5de": {
       "id": "24eead75-c060-4d7d-93c9-b7bcf037a5de",
@@ -2321,7 +2317,7 @@
       "yearBorn": -40,
       "isAlive": true,
       "gender": "male",
-      "x": 90,
+      "x": 86,
       "y": 97,
       "state": "moving",
       "stats": {
@@ -2990,7 +2986,7 @@
       "gender": "female",
       "x": 87,
       "y": 142,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 234,
         "influence": 7,
@@ -3340,7 +3336,7 @@
       "gender": "female",
       "x": 87,
       "y": 167,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 53,
         "influence": 9,
@@ -3583,7 +3579,7 @@
       "yearBorn": -26,
       "isAlive": true,
       "gender": "male",
-      "x": 87,
+      "x": 91,
       "y": 57,
       "state": "moving",
       "stats": {
@@ -3657,7 +3653,7 @@
       "gender": "male",
       "x": 92,
       "y": 62,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 96,
         "influence": 3,
@@ -4077,7 +4073,7 @@
       "gender": "male",
       "x": 92,
       "y": 92,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 5115,
         "influence": 3,
@@ -4577,7 +4573,7 @@
       "yearBorn": -14,
       "isAlive": true,
       "gender": "male",
-      "x": 89,
+      "x": 92,
       "y": 127,
       "state": "moving",
       "stats": {
@@ -4603,9 +4599,7 @@
         "height": 1.1714731796414855,
         "bodyType": "average"
       },
-      "residenceId": "c45a01a4-bf98-4d4f-80d4-51423e63cee5",
-      "targetX": 92,
-      "targetY": 127
+      "residenceId": "c45a01a4-bf98-4d4f-80d4-51423e63cee5"
     },
     "764b4e75-4067-4b5e-95d1-140a590e6265": {
       "id": "764b4e75-4067-4b5e-95d1-140a590e6265",
@@ -4657,7 +4651,7 @@
       "gender": "male",
       "x": 92,
       "y": 132,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 187,
         "influence": 0,
@@ -4802,7 +4796,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 92,
-      "y": 136,
+      "y": 140,
       "state": "moving",
       "stats": {
         "wealth": 161,
@@ -207418,7 +207412,7 @@
     "year": 1,
     "week": 1,
     "day": 2,
-    "hour": 2,
+    "hour": 3,
     "isNight": true
   },
   "weather": "clear",
