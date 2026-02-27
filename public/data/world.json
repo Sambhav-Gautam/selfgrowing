@@ -2319,7 +2319,7 @@
       "gender": "male",
       "x": 82,
       "y": 97,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 81,
         "influence": 0,
@@ -3579,7 +3579,7 @@
       "gender": "male",
       "x": 92,
       "y": 57,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 56,
         "influence": 9,
@@ -4793,7 +4793,7 @@
       "gender": "male",
       "x": 92,
       "y": 142,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 161,
         "influence": 9,
@@ -207406,7 +207406,7 @@
     "year": 1,
     "week": 1,
     "day": 2,
-    "hour": 4,
+    "hour": 5,
     "isNight": true
   },
   "weather": "clear",
