@@ -330,7 +330,7 @@
       "gender": "female",
       "x": 77,
       "y": 62,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 220,
         "influence": 8,
@@ -1141,7 +1141,7 @@
       "gender": "male",
       "x": 72,
       "y": 122,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 153,
         "influence": 5,
@@ -2051,7 +2051,7 @@
       "gender": "male",
       "x": 82,
       "y": 77,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 222,
         "influence": 2,
@@ -2086,7 +2086,7 @@
       "gender": "female",
       "x": 87,
       "y": 77,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 159,
         "influence": 3,
@@ -2855,7 +2855,7 @@
       "isAlive": true,
       "gender": "female",
       "x": 87,
-      "y": 136,
+      "y": 132,
       "state": "moving",
       "stats": {
         "wealth": 65,
@@ -2880,9 +2880,7 @@
         "height": 1.2618306443049048,
         "bodyType": "average"
       },
-      "residenceId": "0a7a99cd-4a81-4415-8144-2dc83c3bb0d7",
-      "targetX": 87,
-      "targetY": 132
+      "residenceId": "0a7a99cd-4a81-4415-8144-2dc83c3bb0d7"
     },
     "00e10bf7-6095-47ae-8953-abbe3382f823": {
       "id": "00e10bf7-6095-47ae-8953-abbe3382f823",
@@ -3311,7 +3309,7 @@
       "yearBorn": -21,
       "isAlive": true,
       "gender": "male",
-      "x": 79,
+      "x": 82,
       "y": 167,
       "state": "moving",
       "stats": {
@@ -3337,9 +3335,7 @@
         "height": 0.9236562282969746,
         "bodyType": "thin"
       },
-      "residenceId": "148e3560-888a-452e-ad29-b645ffae2774",
-      "targetX": 82,
-      "targetY": 167
+      "residenceId": "148e3560-888a-452e-ad29-b645ffae2774"
     },
     "03f049aa-9cba-4e5a-8853-cc8d8d4af608": {
       "id": "03f049aa-9cba-4e5a-8853-cc8d8d4af608",
@@ -4516,7 +4512,7 @@
       "isAlive": true,
       "gender": "male",
       "x": 92,
-      "y": 115,
+      "y": 119,
       "state": "moving",
       "stats": {
         "wealth": 9516,
@@ -4589,7 +4585,7 @@
       "gender": "male",
       "x": 92,
       "y": 127,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 5634,
         "influence": 5,
@@ -4624,7 +4620,7 @@
       "gender": "female",
       "x": 97,
       "y": 127,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 235,
         "influence": 0,
@@ -207424,7 +207420,7 @@
     "year": 1,
     "week": 1,
     "day": 3,
-    "hour": 3,
+    "hour": 4,
     "isNight": true
   },
   "weather": "clear",
