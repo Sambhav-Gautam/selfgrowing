@@ -4513,7 +4513,7 @@
       "gender": "male",
       "x": 92,
       "y": 122,
-      "state": "moving",
+      "state": "sleeping",
       "stats": {
         "wealth": 9516,
         "influence": 0,
@@ -207418,7 +207418,7 @@
     "year": 1,
     "week": 1,
     "day": 3,
-    "hour": 5,
+    "hour": 6,
     "isNight": true
   },
   "weather": "clear",
